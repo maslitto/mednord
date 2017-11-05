@@ -29,5 +29,13 @@ Route::get('/', function () {
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
-    Route::get('/home', 'HomeController@index');
+    Route::get('/', 'IndexController@index')->name('home');
+    Route::get('/catalog/{subcategory?}', 'CatalogController@index')->name('catalog');
+    Route::get('/products/{slug}', 'CatalogController@view')->name('product');
+    Route::get('/kontakty', function () {
+        return view('contacts');
+    })->name('kontakty');
+    Route::get('/proizvoditeli/', 'VendorController@index');
+    Route::get('/proizvoditeli/{slug?}', 'VendorController@view');
+    Route::post('/question/save', 'QuestionController@save');
 });

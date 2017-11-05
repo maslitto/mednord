@@ -29,7 +29,7 @@ class Roles extends Section
     /**
      * @var string
      */
-    protected $title = 'Roles';
+    protected $title = 'Роли';
 
     /**
      * @var string

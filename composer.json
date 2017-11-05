@@ -10,8 +10,12 @@
         "laravel/tinker": "1.0.*",
         "laravelrus/sleepingowl": "4.*@dev",
         "baum/baum": "~1.1",
+        "barryvdh/laravel-ide-helper": "^2.1",
         "intervention/image": "^2.3",
-        "barryvdh/laravel-ide-helper": "^2.1"
+        "ivanlemeshev/laravel5-cyrillic-slug": "^1.0",
+        "jenssegers/agent": "^2.5",
+        "panique/laravel-sass": "^1.0",
+        "roumen/sitemap": "^2.6"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

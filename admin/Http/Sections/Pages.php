@@ -1,7 +1,5 @@
 <?php
-
 namespace Admin\Http\Sections;
-
 use AdminColumn;
 use AdminDisplay;
 use AdminForm;
@@ -11,7 +9,6 @@ use SleepingOwl\Admin\Contracts\Form\FormInterface;
 use SleepingOwl\Admin\Contracts\Initializable;
 use SleepingOwl\Admin\Navigation\Badge;
 use SleepingOwl\Admin\Section;
-
 /**
  * Class Pages
  *
@@ -27,17 +24,14 @@ class Pages extends Section implements Initializable
      * @var bool
      */
     protected $checkAccess = false;
-
     /**
      * @var string
      */
-    protected $title = 'Pages';
-
+    protected $title = 'Структура сайта';
     /**
      * @var string
      */
     protected $alias;
-
     /**
      * Initialize class.
      */
@@ -45,7 +39,6 @@ class Pages extends Section implements Initializable
     {
         $this->addToNavigation()->setIcon('fa fa-sitemap');
     }
-
     /**
      * @return DisplayInterface
      */
@@ -53,7 +46,6 @@ class Pages extends Section implements Initializable
     {
         return AdminDisplay::tree()->setValue('title');
     }
-
     /**
      * @param int $id
      *
@@ -62,11 +54,15 @@ class Pages extends Section implements Initializable
     public function onEdit($id)
     {
         return AdminForm::form()->setElements([
-            AdminFormElement::text('title', 'Title')->required(),
-            AdminFormElement::ckeditor('text', 'Text')
+            AdminFormElement::text('title', 'Заголовок')->required(),
+           // AdminFormElement::ckeditor('text', 'Text'),
+            AdminFormElement::text('metatitle', 'metatitle'),
+            AdminFormElement::text('metakeywords', 'metakeywords'),
+            AdminFormElement::text('metadescription', 'metadescription'),
+            AdminFormElement::text('h1', 'h1'),
+            AdminFormElement::text('slug','Slug'),
         ]);
     }
-
     /**
      * @return FormInterface
      */

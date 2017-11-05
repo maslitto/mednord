@@ -21,7 +21,14 @@ class CreatePagesTable extends Migration
             $table->integer('depth')->nullable();
             $table->integer('order')->default(0);
             $table->string('title');
-            $table->text('text');
+
+            $table->string('metatitle');
+            $table->string('metakeywords');
+            $table->string('metadescription');
+            $table->string('h1');
+            $table->text('seotext');
+            $table->string('slug');
+
             $table->timestamps();
         });
     }

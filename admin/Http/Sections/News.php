@@ -10,6 +10,8 @@ use AdminFormElement;
 use SleepingOwl\Admin\Contracts\Display\DisplayInterface;
 use SleepingOwl\Admin\Contracts\Form\FormInterface;
 use SleepingOwl\Admin\Section;
+use SleepingOwl\Admin\Contracts\Initializable;
+
 
 /**
  * Class News
@@ -18,7 +20,7 @@ use SleepingOwl\Admin\Section;
  *
  * @see http://sleepingowladmin.ru/docs/model_configuration_section
  */
-class News extends Section
+class News extends Section implements Initializable
 {
     /**
      * @see http://sleepingowladmin.ru/docs/model_configuration#ограничение-прав-доступа
@@ -30,25 +32,35 @@ class News extends Section
     /**
      * @var string
      */
-    protected $title = 'News';
+    protected $title = 'Новости';
 
     /**
      * @var string
      */
     protected $alias;
 
+
+    /**
+     * Initialize class.
+     */
+    public function initialize()
+    {
+        $this->addToNavigation()->setIcon('fa fa-newspaper-o');
+    }
+
     /**
      * @return DisplayInterface
      */
+
     public function onDisplay()
     {
         return AdminDisplay::table()->setApply(function($query) {
-                $query->orderBy('date', 'desc');
+                $query->orderBy('created_at', 'desc');
             })->setColumns([
-                AdminColumn::link('title', 'Title'),
-                AdminColumn::datetime('date', 'Date')->setFormat('d.m.Y')->setWidth('150px'),
-                AdminColumnEditable::checkbox('published', 'Published'),
-            ])->paginate(5);
+                AdminColumn::link('title', 'Заголовок'),
+                AdminColumn::datetime('created_at', 'Дата публикации')->setFormat('d.m.Y')->setWidth('150px'),
+                //AdminColumnEditable::checkbox('published', 'Published'),
+            ])->paginate(20);
     }
 
     /**
@@ -59,11 +71,15 @@ class News extends Section
     public function onEdit($id)
     {
         $form = AdminForm::form()->setElements([
-            AdminFormElement::text('title', 'Title')->required(),
-            AdminFormElement::date('date', 'Date')->required()->setFormat('d.m.Y'),
-            AdminFormElement::radio('published', 'Published')->setOptions(['0' => 'Not published', '1' => 'Published'])
-                ->required(),
-            AdminFormElement::wysiwyg('text', 'Text'),
+            AdminFormElement::image('image', 'Картинка')->required(),
+            AdminFormElement::text('title', 'Заголовок')->required(),
+            AdminFormElement::wysiwyg('text', 'Текст новости'),
+
+            AdminFormElement::text('metatitle', 'metatitle'),
+            AdminFormElement::text('metakeywords', 'metakeywords'),
+            AdminFormElement::text('metadescription', 'metadescription'),
+            AdminFormElement::text('h1', 'h1'),
+            AdminFormElement::hidden('slug'),
         ]);
         return $form;
     }

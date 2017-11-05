@@ -12,6 +12,8 @@ return [
     | services your application utilizes. Set this in your ".env" file.
     |
     */
+    'phone' => '+7 (812) 987-65-43',
+    'email' => 'info@nordmed.ru',
 
     'env' => env('APP_ENV', 'production'),
 
@@ -26,7 +28,7 @@ return [
     |
     */
 
-    'debug' => env('APP_DEBUG', false),
+    'debug' => env('APP_DEBUG', true),
 
     /*
     |--------------------------------------------------------------------------
@@ -65,7 +67,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'ru',
 
     /*
     |--------------------------------------------------------------------------
@@ -155,7 +157,8 @@ return [
         Admin\Providers\AdminSectionsServiceProvider::class,
 
         Intervention\Image\ImageServiceProviderLaravel5::class,
-
+        IvanLemeshev\Laravel5CyrillicSlug\SlugServiceProvider::class,
+        DaveJamesMiller\Breadcrumbs\ServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -208,6 +211,10 @@ return [
         'URL'       => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
+
+
+        'Slug'      => IvanLemeshev\Laravel5CyrillicSlug\SlugFacade::class,
+        'Breadcrumbs' => DaveJamesMiller\Breadcrumbs\Facade::class,
 
     ],
 
