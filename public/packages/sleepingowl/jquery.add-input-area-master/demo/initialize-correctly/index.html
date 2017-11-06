@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Initialize correctly: jquery.add-input-area</title>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="../../dist/jquery.add-input-area.js"></script>
+<script src="../form-serialize.js"></script>
+<script>
+$(function() {
+  $('#list')
+    .addInputArea()
+    .on('change', 'select', function() {
+      $(this).next().prop('disabled', $(this).val() == 'disable');
+    });
+});
+</script>
+</head>
+<body>
+<h1>Initialize correctly: jquery.add-input-area</h1>
+<form class="form-serialize">
+  <ol id="list">
+    <li class="list_var">
+      <select name="list_mask_0">
+        <option value="enable">enable</option>
+        <option value="disable">disable</option>
+      </select>
+      <input type="text" size="30" name="list_text_0">
+      <button type="button" class="list_del">Delete</button>
+    </li>
+  </ol>
+  <input type="button" value="Add" class="list_add"><br>
+  <input type="submit" value="Send" name="submit">
+</form>
+</body>
+</html>

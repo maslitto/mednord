@@ -1,20 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
-                <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
+    <main class="content">
+        <div class="wrapper">
+            <div class="page-container">
+
+                <div class="popup" id="request-price" style="margin-top:50px">
+                    <div class="popup-title">Вход в админку</div>
+                    <form class="popup-form" role="form" method="POST" action="{{ url('/login') }}">
                         {!! csrf_field() !!}
-
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label class="col-md-4 control-label">E-Mail Address</label>
-
-                            <div class="col-md-6">
-                                <input type="email" class="form-control" name="email" value="admin@site.com">
+                        <div class="box-field">
+                            <label class="box-field__label">Email</label>
+                            <div class="box-field__input">
+                                <input type="email" class="form-control" name="email" value="">
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
@@ -23,12 +21,10 @@
                                 @endif
                             </div>
                         </div>
-
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label class="col-md-4 control-label">Password</label>
-
-                            <div class="col-md-6">
-                                <input type="password" class="form-control" name="password" value="password">
+                        <div class="box-field">
+                            <label class="box-field__label">Пароль:</label>
+                            <div class="box-field__input">
+                                <input type="password" class="form-control" name="password" value="">
 
                                 @if ($errors->has('password'))
                                     <span class="help-block">
@@ -36,31 +32,17 @@
                                     </span>
                                 @endif
                             </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember"> Remember Me
-                                    </label>
-                                </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="remember"> Запомнить
+                                </label>
                             </div>
                         </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    <i class="fa fa-btn fa-sign-in"></i>Login
-                                </button>
-
-                                <a class="btn btn-link" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
-                            </div>
-                        </div>
+                        <input value="Отправить" class="main-btn white" type="submit">
                     </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
+    </main>
 @endsection

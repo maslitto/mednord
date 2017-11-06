@@ -10,6 +10,7 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="/css/style.css" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+
     <base href="/">
 
 </head>
@@ -81,7 +82,7 @@
 <div class="icon-load"></div>
 
 <!-- BODY EOF   -->
-
+@section('js')
 <script type="text/javascript" src="/js/jquery-3.0.0.min.js"></script>
 <script type="text/javascript" src="/js/jquery-migrate-1.4.1.min.js" ></script>
 
@@ -110,4 +111,5 @@
 -->
 <script type="text/javascript" src="/js/custom.js" ></script>
 </body>
+@show
 </html>

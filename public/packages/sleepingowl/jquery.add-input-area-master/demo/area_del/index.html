@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Wrapper for del-button: jquery.add-input-area</title>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="../../dist/jquery.add-input-area.js"></script>
+<script src="../form-serialize.js"></script>
+<script>
+$(function() {
+  $('#list').addInputArea({
+    area_del: '.del-area'
+  });
+});
+</script>
+</head>
+<body>
+<h1>Wrapper for del-button: jquery.add-input-area</h1>
+<form class="form-serialize">
+  <table id="list" class="table">
+    <thead>
+      <tr><th>Name</th><th>Mail</th><th></th></tr>
+    </thead>
+    <tbody>
+      <tr class="list_var">
+        <td><input type="text" name="list-name_0"></td>
+        <td><input type="text" name="list-mail_0"></td>
+        <td class="del-area"><button type="button" class="list_del">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <input type="button" value="Add" class="list_add"><br>
+  <input type="submit" value="Send" name="submit">
+</form>
+</body>
+</html>

@@ -6,7 +6,7 @@
 	<main class="content">		
 		<div class="pageHead">
 			<div class="wrapper">
-				{!! Breadcrumbs::renderIfExists() !!}
+
 			</div>
 		</div>
 		
@@ -43,26 +43,15 @@
 									Характеристики
 								</div>
 								<div class="short-info-container">
-									<div class="short-info__item">
-										<span>Артикул</span>
-										<div class="dots"></div>
-										<span class="value">3468832</span>
-									</div>
-									<div class="short-info__item">
-										<span>Характеристика</span>
-										<div class="dots"></div>
-										<span class="value">103 вт.</span>
-									</div>
-									<div class="short-info__item">
-										<span>Производитель</span>
-										<div class="dots"></div>
-										<span class="value">Siemens</span>
-									</div>
-									<div class="short-info__item">
-										<span>Вес</span>
-										<div class="dots"></div>
-										<span class="value">2 500 кг.</span>
-									</div>
+									@if($product->params)
+										@foreach($product->params as $param)
+											<div class="short-info__item">
+												<span>{{$param['name']}}</span>
+												<div class="dots"></div>
+												<span class="value">{{$param['value']}}</span>
+											</div>
+										@endforeach
+									@endif
 								</div>
 							</div>
 							<div class="share">
@@ -82,24 +71,28 @@
 				</div>
 				<div class="pageText">
 					<div class="tabs">
-						<span class="tab">Описание</span>
-						<span class="tab">Характеристики</span>
+						<span class="tab active" data-target="#tab1">Описание</span>
+						<span class="tab" data-target="#tab2">Характеристики</span>
 					</div>
 					<div class="tab-content">
-						<div class="tab-item">
+						<div class="tab-item" id="tab1">
 							<div class="text">
 								{!! $product->text !!}
 							</div>
 						</div>
-						<div class="tab-item">
+						<div class="tab-item"  id="tab2">
 							<div class="text">
-								<p>Рентгендиагностический комплекс CLINOMAT предназначен для оснащения кабинетов общей рентгенологии и выполняет полный спектр рентгенографических и рентгеноскопических исследований.</p>
-								<p>Более 50% всех рентгеновских обследований относятся к рентгенографии: исследования скелета, конечностей и органов дыхания и выполняются на столе и стойке снимков. CLINOMAT на 2 рабочих места предназначен для рентгенографии и состоит из стола с декой, колонны излучателя, устройства для выполнения линейной (аналоговой) томографии, пульта управления и генератора. Для исследования легких и черепа используется стойка снимков.</p>
-								<p>CLINOMAT на 3 рабочих места также включает в себя кроме всего вышеперечисленного поворотный стол-штатив, который используется для рентгеноскопии. Телевизионная система, используемая для просмотра видеоизображения может подключаться к компьютеру.</p>
-								<p>Питающее устройство PIXEL - это микропроцессорный высокочастотный генератор нового поколения, гарантирующий точность установок, низкий уровень пульсаций, длительность службы всего комплекса. Широкий выбор анатомических программ и дружественный интерфейс позволяют персоналу эффективно выполнять свои задачи.</p>
-								<p>В качестве приемника рентгеновских лучей может выступать как пленка, так и системы компьютерной радиографии (CR) и плоскопанельные детекторы (DR).</p>
+								@if($product->params)
+									@foreach($product->params as $param)
+										<div class="short-info__item">
+											<span>{{$param['name']}}</span>
+											<div class="dots"></div>
+											<span class="value">{{$param['value']}}</span>
+										</div>
+									@endforeach
+								@endif
 							</div>
-						</div>
+						</div  id="tab1">
 					</div>
 				</div>
 			</div>

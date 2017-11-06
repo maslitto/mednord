@@ -12,7 +12,7 @@ use SleepingOwl\Admin\Contracts\Display\DisplayInterface;
 
 use SleepingOwl\Admin\Section;
 use SleepingOwl\Admin\Contracts\Initializable;
-
+use Request;
 
 /**
  * Class Posts
@@ -75,10 +75,23 @@ class Products extends Section implements Initializable
             return $query
                 ->where('parent_id', 2);
         });
+        $param = AdminFormElement::custom(function ($model) {
+            //$model->title = 'params';
+        })->setDisplay(function ($model) {
+            return view('includes.param', [
+                'model' => $model
+            ]);
+        });
+        $param->setCallback(function($model){
+            $model->params = Request::post('params');
+            //$model->params = $model->params;
+        });
         return AdminForm::panel()->addBody([
             AdminFormElement::images('images', 'Картинки'),
             AdminFormElement::text('title', 'Заголовок')->required(),
             AdminFormElement::text('article', 'Артикул'),
+            //AdminFormElement::text('params', 'params'),
+            $param,
             AdminFormElement::ckeditor('text', 'Текст описания'),
             $select,
             AdminFormElement::select('vendor_id')->setLabel('Производитель')

@@ -30,7 +30,7 @@
 				</div>
 				<div class="text">
 					<div class="img-wrapper">
-						<img src="{{$vendor->image}}" alt="{{$vendor->title}}" alt="">
+						<img src="img/img-manufacture.png" alt="{{$vendor->title}}" alt="">
 					</div>
 					<div>
 						{{$vendor->text}}

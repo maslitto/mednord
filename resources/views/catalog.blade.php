@@ -36,27 +36,19 @@
                             @endforeach
                         </ul>
                         <div class="filter">
-                            <form>
+                            <form action="catalog" method="GET" id="filterForm">
+                                {{Form::hidden('per_page', Request::has('per_page') == null ? '9' :Request::get('per_page'))}}
+                                {{Form::hidden('sortdir',Request::get('sortdir'))}}
                                 <div class="filter-title">Бренды</div>
                                 <ul class="list-checkbox">
+                                    @foreach($vendors as $vendor)
                                     <li class="list-checkbox__item">
                                         <label class="checkbox-label">
-                                            <input type="checkbox" class="js-styled">
-                                            <span class="chekbox-text">Siemens</span>
+                                            <input type="checkbox" class="js-styled" name="vendors[]">
+                                            <span class="chekbox-text">{{$vendor->title}}</span>
                                         </label>
                                     </li>
-                                    <li class="list-checkbox__item">
-                                        <label class="checkbox-label">
-                                            <input type="checkbox" class="js-styled">
-                                            <span class="chekbox-text">Rochien</span>
-                                        </label>
-                                    </li>
-                                    <li class="list-checkbox__item">
-                                        <label class="checkbox-label">
-                                            <input type="checkbox" class="js-styled">
-                                            <span class="chekbox-text">Aquator</span>
-                                        </label>
-                                    </li>
+                                    @endforeach
                                 </ul>
                                 <div class="submit-container">
                                     <input type="submit" class="submit-btn" value="Подобрать">
@@ -70,19 +62,19 @@
                                 <div class="amount">Всего найдено {{$products->total()}}</div>
                                 <div class="show">
                                     <span>Показывать&nbsp;по: </span>
-                                    <select class="js-styled">
-                                        <option value="9">9 на странице</option>
-                                        <option value="12">12 на странице</option>
-                                        <option value="24">24 на странице</option>
+                                    <select class="js-styled per-page" >
+                                        <option value="9" {{Request::get('per_page')==9 ? 'selected' :''}}>9 на странице</option>
+                                        <option value="12" {{Request::get('per_page')==12 ? 'selected' :''}} >12 на странице</option>
+                                        <option value="24" {{Request::get('per_page')==24 ? 'selected' :''}}>24 на странице</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="how-sort hidden-xs">
                                 <div class="show">
                                     <span>Сортировать&nbsp;по: </span>
-                                    <select class="js-styled">
-                                        <option value="9">Убыванию</option>
-                                        <option value="12">Возростанию</option>
+                                    <select class="js-styled sort-dir">
+                                        <option value="DESC"{{Request::get('sortdir')=='DESC' ? 'selected' :''}}>Убыванию</option>
+                                        <option value="ASC"{{Request::get('sortdir')=='ASC' ? 'selected' :''}}>Возрастанию</option>
                                     </select>
                                 </div>
                             </div>
@@ -107,7 +99,7 @@
                                         <a href="{{$product->url}}" class="img-wrapper">
                                             <img src="{{$product->resized('264x223')[0]}}" alt="{{$product->title}}">
                                         </a>
-                                        <span class="button-container"><a href="#request-price" class="js-popup">Запросить цену</a></span>
+                                        <span class="button-container"><a href="#request-price" class="js-popup" data-product-title="{{$product->title}}">Запросить цену</a></span>
                                     </div>
                                 </div>
                             @endforeach
@@ -115,14 +107,26 @@
                         {!! $products->appends(Request::capture()->except('page'))->links('includes.pagination') !!}
 
                         <div class="text">
-                            <p>Предлагаем полностью цифровые и аналоговые рентгеновские системы популярного европейского производителя Italray, передвижные палатные рентгены Matrix Ibis, а также установки С-дуга Eurocolumbus. Вы можете приобрести качественное современное цифровое оборудование по привлекательной цене. Italray — производитель надежных рентгеновских систем с 1974 г.</p>
-                            <p>Уникальные технологии обеспечивают высочайшее качество изображения.<br>
-                                Высокая надежность и качество рентген-установок.<br>
-                                Самые низкие цены среди европейских производителей.</p>
+                            seotext
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </main>
+@endsection
+@section('js')
+    @parent
+    <script>
+        $('.per-page').change(function(){
+            $('input[name=per_page]').val($(this).val());
+            $('#filterForm').submit();
+            return false;
+        })
+        $('.sort-dir').change(function(){
+            $('input[name=sortdir]').val($(this).val());
+            $('#filterForm').submit();
+            return false;
+        })
+    </script>
 @endsection

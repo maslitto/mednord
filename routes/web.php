@@ -35,6 +35,9 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/kontakty', function () {
         return view('contacts');
     })->name('kontakty');
+    Route::get('/o-kompanii', function () {
+        return view('about');
+    })->name('about');
     Route::get('/proizvoditeli/', 'VendorController@index');
     Route::get('/proizvoditeli/{slug?}', 'VendorController@view');
     Route::post('/question/save', 'QuestionController@save');

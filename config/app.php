@@ -159,6 +159,7 @@ return [
         Intervention\Image\ImageServiceProviderLaravel5::class,
         IvanLemeshev\Laravel5CyrillicSlug\SlugServiceProvider::class,
         DaveJamesMiller\Breadcrumbs\ServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -215,6 +216,8 @@ return [
 
         'Slug'      => IvanLemeshev\Laravel5CyrillicSlug\SlugFacade::class,
         'Breadcrumbs' => DaveJamesMiller\Breadcrumbs\Facade::class,
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
 
     ],
 

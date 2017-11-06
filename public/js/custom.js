@@ -207,8 +207,10 @@ $(function(){
 
 	if($('.product').length){
 		$(".product .tab").click(function(){
+			index = $(this).index();
 			$(".product .tab").removeClass("active").eq($(this).index()).addClass("active");
-			$(".product .tab-item").hide().eq($(this).index()).fadeIn()
+
+			$(".product .tab-item ").hide().eq($(this).index()).fadeIn()
 		}).eq(0).addClass("active");
 	}
 
@@ -218,7 +220,9 @@ $(function(){
 			$(".about .tab-item").hide().eq($(this).index()).fadeIn()
 		}).eq(0).addClass("active");
 	}
-
+	$('.catalog-item .js-popup ').click(function(){
+		$('.popup-form input[name=title]').val($(this).data('product-title'));
+	})
 	if($('.js-popup').length){
 		$('.js-popup').magnificPopup({
 			fixedBgPos: true,

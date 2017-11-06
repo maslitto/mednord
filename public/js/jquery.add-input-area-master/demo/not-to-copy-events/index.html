@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Not to copy events: jquery.add-input-area</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="../../dist/jquery.add-input-area.js"></script>
+<script src="../form-serialize.js"></script>
+<script>
+$(function() {
+  // Set Bootstrap tooltip before apply plugin.
+  $('#list .test-tooltip').tooltip();
+  $('#list').addInputArea({
+    clone_event: false,
+    after_add: function() {
+      $('#list .test-tooltip').tooltip();
+    }
+  });
+});
+</script>
+</head>
+<body>
+<h1>Not to copy events: jquery.add-input-area</h1>
+<form class="form-serialize">
+  <ol id="list">
+    <li class="list_var">
+      <input type="text" id="list_0" name="list_0" class="test-tooltip" data-toggle="tooltip" title="Some tooltip text!" placeholder="Hover over me">
+      <button class="list_del">Delete</button>
+    </li>
+  </ol>
+  <input type="button" value="Add" class="list_add"><br>
+  <input type="submit" value="Send" name="submit">
+</form>
+</body>
+</html>

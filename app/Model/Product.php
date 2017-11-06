@@ -5,7 +5,7 @@ use Slug;
 
 class Product extends Model
 {
-    protected $hidden = [];
+    protected $guarded = [];
 
     public function setSlugAttribute($value)
     {
@@ -13,6 +13,7 @@ class Product extends Model
     }
     protected $casts = [
         'images' => 'array',
+        'params' => 'array',
     ];
 
     //Relations
@@ -25,7 +26,9 @@ class Product extends Model
         return $this->belongsTo(Vendor::class);
     }
     //Mutators & Accessors
-
+    public function setParamsAttribute($value){
+        $this->attributes['params'] = json_encode($value);
+    }
     public function getImageAttribute($value)
     {
         if(isset($this->images)){
