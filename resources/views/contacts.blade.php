@@ -18,29 +18,29 @@
 				<div class="contacts-container">
 					<div class="contacts-text">
 						<p>Хотите заказать медицинское оборудование для вашей клиники, рассчитать стоимость доставку лизинг или просто пообщаться и задать вопрос?</p>
-						<p>Пишите письма, звоните или заходите в гости – наш офис находится в самом центре Питера. </p>
+						<p>Пишите письма, звоните или заходите в гости – наш офис находится недалеко от м.Электросила. </p>
 					</div>
 					<div class="contacts-info">
 						<div class="contacts-info__item">
 							<i class="icon-contacts address"></i>
 							<div class="text">
 								<div class="title">Наш адрес:</div>
-								<span>РФ 123456, г. Санкт-Петербург, ул. Пушкина 99, 7 этаж, офис 10</span>
+								<span>РФ 123456, г. Санкт-Петербург, ул.Рощинская 32 литер а , офис 402</span>
 							</div>
 						</div>
 						<div class="contacts-info__item">
 							<i class="icon-contacts tel"></i>
 							<div class="text">
-								<div class="title">Наш телефон/факс:</div>
-								<a href="+78129876543">+7 (812) 987-65-43</a>
-								<a href="+78129874365">+7 (812) 987-43-65</a>
+								<div class="title">Наш телефон</div>
+								<a href="+78126027847">+7 (812) 6027847</a>
+								<!--a href="+78129874365">+7 (812) 987-43-65</a-->
 							</div>
 						</div>
 						<div class="contacts-info__item">
 							<i class="icon-contacts email"></i>
 							<div class="text">
 								<div class="title">E-mail:</div>
-								<a href="mailto:info@nordline.net">info@nordline.net</a>
+								<a href="mailto:info@med-nord.ru">info@med-nord.ru</a>
 							</div>
 						</div>
 						<div class="contacts-info__item">

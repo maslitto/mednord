@@ -67,14 +67,15 @@ class Products extends Section implements Initializable
      */
     public function onEdit($id)
     {
+    	$leaves = \App\Model\Page::where('parent_id', 2)->first()->getLeaves();
+    	foreach($leaves as $leaf){
+    		$options[$leaf->id] = $leaf->title;
+    	}
         $select = AdminFormElement::select('category_id')->setLabel('Категория')
-            ->setModelForOptions(\App\Model\Page::class)
+            //->setModelForOptions(\App\Model\Page::class)
+        	->setOptions($options)
             ->setHtmlAttribute('placeholder', 'Категория')
             ->setDisplay('title');
-        $select->setLoadOptionsQueryPreparer(function($select, $query) {
-            return $query
-                ->where('parent_id', 2);
-        });
         $param = AdminFormElement::custom(function ($model) {
             //$model->title = 'params';
         })->setDisplay(function ($model) {
@@ -97,6 +98,7 @@ class Products extends Section implements Initializable
             AdminFormElement::select('vendor_id')->setLabel('Производитель')
                 ->setModelForOptions(\App\Model\Vendor::class)
                 ->setHtmlAttribute('placeholder', 'Производитель')
+                ->nullable()
                 ->setDisplay('title'),
                 //->required(),
 

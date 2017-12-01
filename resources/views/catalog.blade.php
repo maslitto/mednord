@@ -85,7 +85,9 @@
                                     <div class="catalog-item">
                                         <div class="text">
                                             <h3 class="name"><a href="{{$product->url}}">{{$product->title}}</a></h3>
-                                            <h5 class="brand-name">{{$product->vendor->title}}</h5>
+                                            @if(isset($product->vendor_id))
+                                            	<h5 class="brand-name">{{$product->vendor->title}}</h5>
+                                            @endif
                                             @if($product->discount)
                                                 <span class="label">скидка</span>
                                             @endif

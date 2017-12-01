@@ -34,7 +34,9 @@
 					</div>
 					<div class="product-right">
 						<div class="product-descr">
-							<div class="brand">{{$product->vendor->title}}</div>
+							@if(isset($product->vendor_id))
+								<div class="brand">{{$product->vendor->title}}</div>
+							@endif
 							<h1 class="name">{{$product->title}}</h1>
 							<div class="price">Цена: <span></span></div>
 							<a href="#request-price" class="price-button js-popup">Запросить цену</a>
