@@ -3,9 +3,9 @@
 use Baum\Node;
 use Illuminate\Database\Eloquent\Model;
 use Slug;
+
 class Page extends Node
 {
-    //set translit slug
     public function setSlugAttribute($value)
     {
 

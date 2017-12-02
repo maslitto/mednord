@@ -12,8 +12,8 @@ return [
     | services your application utilizes. Set this in your ".env" file.
     |
     */
-    'phone' => '+7 (812) 987-65-43',
-    'email' => 'info@nordmed.ru',
+    'phone' => '+7 (812) 602-78-47',
+    'email' => 'info@med-nord.ru',
 
     'env' => env('APP_ENV', 'production'),
 
@@ -41,7 +41,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'http://med-nord.ru'),
 
     /*
     |--------------------------------------------------------------------------

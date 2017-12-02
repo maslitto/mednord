@@ -21,7 +21,6 @@
                                 <li>
                                     <a href="javascript:void(0);">{{$category->title}}</a>
                                     <ul class="catalog-list__secondary">
-
                                         @foreach($category->getDescendants() as $descendant)
                                             <li><a href="{{$descendant->url}}">{{$descendant->title}}</a></li>
                                         @endforeach
@@ -32,7 +31,6 @@
                                         <a href="{{$category->url}}">{{$category->title}}</a>
                                     </li>
                                 @endif
-
                             @endforeach
                         </ul>
                         <div class="filter">

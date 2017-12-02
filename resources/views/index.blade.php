@@ -22,53 +22,30 @@
                     <div class="features-item">
                         <i class="icon-feature warranty"></i>
                         <h4>Гарантия на оборудование</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                        <p>На все оборудование предоставляется гарантия</p>
                     </div>
                     <div class="features-item">
                         <i class="icon-feature delivery"></i>
                         <h4>Бесплатная доставка по России</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                        <p>Доставим в любой регион бесплатно</p>
                     </div>
                     <div class="features-item">
                         <i class="icon-feature prices"></i>
-                        <h4>Минимальные цены Лизинг</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                        <h4>Минимальные <br> цены</h4>
+                        <p>Цены от производителя</p>
                     </div>
                     <div class="features-item">
                         <i class="icon-feature learning"></i>
-                        <h4>Обучение врачей профессионалами</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                        <h4>Обучение <br> персонала</h4>
+                        <p>Наши специалисты обучат Ваш персонал</p>
                     </div>
                     <div class="features-item">
                         <i class="icon-feature help"></i>
                         <h4>Помощь в подборе оборудования</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                        <p>Опытные менеджеры подберут оборудование под Ваши цели</p>
                     </div>
-                    <div class="features-item">
-                        <i class="icon-feature warranty"></i>
-                        <h4>Гарантия на оборудование</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                    </div>
-                    <div class="features-item">
-                        <i class="icon-feature delivery"></i>
-                        <h4>Бесплатная доставка по России</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                    </div>
-                    <div class="features-item">
-                        <i class="icon-feature prices"></i>
-                        <h4>Минимальные цены Лизинг</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                    </div>
-                    <div class="features-item">
-                        <i class="icon-feature learning"></i>
-                        <h4>Обучение врачей профессионалами</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                    </div>
-                    <div class="features-item">
-                        <i class="icon-feature help"></i>
-                        <h4>Помощь в подборе оборудования</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                    </div>
+
+
                 </div>
             </div>
         </section>
@@ -78,44 +55,44 @@
                 <div class="section-title">
                     <h1>Медицинское оборудование</h1>
                 </div>
-                <div class="text">
+                <!--div class="text">
                     <p>Начав с небольшой московской фирмы, мы выросли в крупнейшего поставщика медицинской Техники и ТСР во всей России. Сегодня наша компания известна практически в любом медицинском учреждении и магазине медицинской техники.</p>
-                </div>
+                </div-->
                 <div class="flex-container">
                     <div class="flex-item-2">
                         <a href="#" class="homeCatalog-item">
-                            <img src="img/img-homeCatalog1.png" alt="">
-                            <span class="name">Категория  первая каталога</span>
+                            <img src="img/cat1.jpg" alt="Анастезиология  и реанимация">
+                            <span class="name">Анастезиология  и реанимация</span>
                         </a>
                     </div>
                     <div class="flex-item-4">
                         <a href="#" class="homeCatalog-item">
-                            <img src="img/img-homeCatalog2.png" alt="">
-                            <span class="name">Категория  первая каталога</span>
+                            <img src="img/cat2.jpg" alt="Эндоскопия">
+                            <span class="name">Эндоскопия</span>
                         </a>
                     </div>
                     <div class="flex-item-4">
                         <a href="#" class="homeCatalog-item">
-                            <img src="img/img-homeCatalog3.png" alt="">
-                            <span class="name">Категория  первая каталога</span>
+                            <img src="img/cat3.jpg" alt="Рентгенология">
+                            <span class="name">Рентгенология</span>
                         </a>
                     </div>
                     <div class="flex-item-4">
                         <a href="#" class="homeCatalog-item">
-                            <img src="img/img-homeCatalog4.png" alt="">
-                            <span class="name">Категория  первая каталога</span>
+                            <img src="img/cat4.jpg" alt="Хирургия">
+                            <span class="name">Хирургия</span>
                         </a>
                     </div>
                     <div class="flex-item-2">
                         <a href="#" class="homeCatalog-item">
-                            <img src="img/img-homeCatalog5.png" alt="">
-                            <span class="name">Категория  первая каталога</span>
+                            <img src="img/cat5.jpg" alt="Функциональная диагностика">
+                            <span class="name">Функциональная диагностика</span>
                         </a>
                     </div>
                     <div class="flex-item-4">
                         <a href="#" class="homeCatalog-item">
-                            <img src="img/img-homeCatalog6.png" alt="">
-                            <span class="name">Категория  первая каталога</span>
+                            <img src="img/cat6.jpg" alt="УЗИ(ультразвуковая диагностика)">
+                            <span class="name">УЗИ(ультразвуковая диагностика)</span>
                         </a>
                     </div>
                 </div>
@@ -133,23 +110,24 @@
                         <div class="section-title">
                             <h2 class="hidden-xs">О компании</h2>
                         </div>
-                        <p>Начав с небольшой московской фирмы, мы выросли в крупнейшего поставщика медицинской Техники и ТСР во всей России. Сегодня наша компания известна практически в любом медицинском учреждении и магазине медицинской техники.</p>
+                        <p>Наша компания  уже более 6 лет  занимается поставками медицинского оборудования по всей России. За это время мы накопили огромный опыт работы с клинетами. Сегодня наша компания известна практически в любом медицинском учреждении и магазине медицинской техники.</p>
                         <div class="homeAbout-features">
                             <div class="homeAbout-features__item">
-                                <span class="number">347</span>
-                                <span class="text">Категория приемущесва</span>
+                                <span class="number">42</span>
+                                <span class="text">Партнеры в 42 регионах</span>
                             </div>
                             <div class="homeAbout-features__item">
-                                <span class="number">74</span>
-                                <span class="text">Сотрудников в компании</span>
+                                <span class="number">200+</span>
+                                <span class="text">Довольных клиентов</span>
                             </div>
                             <div class="homeAbout-features__item">
-                                <span class="number">128</span>
-                                <span class="text">Счастливых клиентов</span>
+                                <span class="number">6 ЛЕТ</span>
+                                <span class="text">Более 6 лет успешной работы</span>
                             </div>
+
                             <div class="homeAbout-features__item">
-                                <span class="number">49</span>
-                                <span>Категория приемущесва</span>
+                                <span class="number">500+</span>
+                                <span>Позиций на складах</span>
                             </div>
                         </div>
                     </div>
@@ -182,16 +160,9 @@
         <section class="brands grey">
             <div class="wrapper">
                 <div class="brands-slider js-brands-slider dots-out">
-                    <a href="#" class="brands-item"><img src="img/icon-brand1.png" alt=""></a>
-                    <a href="#" class="brands-item"><img src="img/icon-brand2.png" alt=""></a>
-                    <a href="#" class="brands-item"><img src="img/icon-brand3.png" alt=""></a>
-                    <a href="#" class="brands-item"><img src="img/icon-brand4.png" alt=""></a>
-                    <a href="#" class="brands-item"><img src="img/icon-brand5.png" alt=""></a>
-                    <a href="#" class="brands-item"><img src="img/icon-brand1.png" alt=""></a>
-                    <a href="#" class="brands-item"><img src="img/icon-brand2.png" alt=""></a>
-                    <a href="#" class="brands-item"><img src="img/icon-brand3.png" alt=""></a>
-                    <a href="#" class="brands-item"><img src="img/icon-brand4.png" alt=""></a>
-                    <a href="#" class="brands-item"><img src="img/icon-brand5.png" alt=""></a>
+                    @foreach($vendors as $vendor)
+                        <a href="{{$vendor->url}}" class="brands-item"><img src="{{$vendor->image}}" alt=""></a>
+                    @endforeach
                 </div>
             </div>
         </section>

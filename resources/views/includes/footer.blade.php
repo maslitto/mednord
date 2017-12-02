@@ -51,30 +51,20 @@
                         <span class="footer-title">КАРТА САЙТА</span>
                         <ul class="footer-nav-list">
                             @foreach(App\Model\Page::where('parent_id',null)->orderBy('lft','ASC')->get() as $menu)
-
                                 <li><a href="/catalog/{{$menu->slug}}" class="
                                             @if(isset($page))
                                     @if ($page->slug == $menu->slug)
                                             active
                                     @endif @endif">{{$menu->title}}</a></li>
-
                             @endforeach
-                            <!--li><a href="#">О компании</a></li>
-                            <li><a href="#">Оплата и доставка</a></li>
-                            <li><a href="#">Каталог оборудования</a></li>
-                            <li><a href="#">Гарантия</a></li>
-                            <li><a href="#">Новости и акции</a></li>
-                            <li><a href="#">Контакты</a></li>
-                            <li><a href="#">Производители</a></li-->
                         </ul>
                     </nav>
                 </div>
                 <div class="flex-item-5">
                     <div class="footer-contacts">
-                        <a href="#" class="footer-tel">{{config('app.phone')}}</a>
-                        <span><strong>Режим работы:</strong> с 9 до 20.00 пн-пт</span>
-                        <span><strong>e-mail:</strong> <a href="mailto:zakaz@domainame.ru">{{config('app.email')}}</a></span>
-                        <span class="designer"><strong>Дизайнер</strong> <a href="#">Alexandr Burn</a></span>
+                        <a href="#+78126027847"class="footer-tel">{{config('app.phone')}}</a>
+                        <span><strong>Режим работы:</strong> с 9 до 18.00 пн-пт</span>
+                        <span><strong>e-mail:</strong> <a href="mailto:{{config('app.email')}}">{{config('app.email')}}</a></span>
                     </div>
                 </div>
             </div>

@@ -47,7 +47,7 @@
 							<i class="icon-contacts schedule"></i>
 							<div class="text">
 								<div class="title">Режим работы:</div>
-								<span>Пн. – Пт.: с 9:00 до 20:00</span>
+								<span>Пн. – Пт.: с 9:00 до 18:00</span>
 							</div>
 						</div>
 					</div>
