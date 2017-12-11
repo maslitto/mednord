@@ -6,7 +6,7 @@
             <div class="wrapper">
                 {!! Breadcrumbs::renderIfExists() !!}
                 <div class="pageTitle">
-                    <h1>Каталог оборудования</h1>
+                    <h1>{{$page->title}}</h1>
                 </div>
             </div>
         </div>
@@ -17,24 +17,27 @@
                     <div class="sidebar">
                         <ul class="catalog-list js-catalog-list">
                             @foreach($categories as $category)
-                                @if(count($category->getDescendants())>0)
-                                <li>
-                                    <a href="javascript:void(0);">{{$category->title}}</a>
-                                    <ul class="catalog-list__secondary">
-                                        @foreach($category->getDescendants() as $descendant)
-                                            <li><a href="{{$descendant->url}}">{{$descendant->title}}</a></li>
-                                        @endforeach
-                                    </ul>
-                                </li>
-                                @else
-                                    <li>
-                                        <a href="{{$category->url}}">{{$category->title}}</a>
-                                    </li>
-                                @endif
+                                @foreach($category->children()->get() as $cat)
+                                    @if(count($cat->getDescendants())>0)
+                                        <li>
+                                            <a href="javascript:void(0);">{{$cat->title}}</a>
+                                            <ul class="catalog-list__secondary">
+                                                @foreach($cat->getDescendants() as $descendant)
+                                                    <li><a href="{{$descendant->url}}">{{$descendant->title}}</a></li>
+                                                @endforeach
+                                            </ul>
+                                        </li>
+                                    @else
+                                        <li>
+                                            <a href="{{$cat->url}}">{{$cat->title}}</a>
+                                        </li>
+                                    @endif
+                                @endforeach
+
                             @endforeach
                         </ul>
                         <div class="filter">
-                            <form action="catalog" method="GET" id="filterForm">
+                            <form action="{{$page->url}}" method="GET" id="filterForm">
                                 {{Form::hidden('per_page', Request::has('per_page') == null ? '9' :Request::get('per_page'))}}
                                 {{Form::hidden('sortdir',Request::get('sortdir'))}}
                                 <div class="filter-title">Бренды</div>

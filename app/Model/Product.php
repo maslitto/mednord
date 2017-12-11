@@ -68,9 +68,21 @@ class Product extends Model
         else return ['https://dummyimage.com/300x300/ffffff/e07383.jpg&text=НЕТ+ФОТО'];
     }
 
-    public static function filter($params)
+    public static function filter($params,$page)
     {
-        $products = self::where('id','>',0);
+        $ids = [];
+        if(!$page->isLeaf()){
+            $leaves = $page->getLeaves();
+
+            foreach($leaves as $leaf){
+                $ids[] = $leaf->id;
+            }
+        }
+        else{
+            $ids[] = $page->id;
+        }
+        //dd($ids);
+        $products = self::whereIn('category_id',$ids);
         if(!empty($params['sortby'])){
             $products = $products->orderBy('updated_at',$params['sortby']);
         }
