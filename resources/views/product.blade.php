@@ -17,7 +17,7 @@
 						<a href="/catalog/" class="back"><i class="icon-back"></i>Обратно в каталог</a>
 						<div class="product-sliders">
 							<div class="product-sliderNav js-product-sliderNav">
-								@foreach($product->resized('554x476') as $image)
+								@foreach($product->resized('264x223') as $image)
 									<div class="img-wrapper">
 										<img src="{{$image}}" alt="">
 									</div>

@@ -33,7 +33,6 @@
                                         </li>
                                     @endif
                                 @endforeach
-
                             @endforeach
                         </ul>
                         <div class="filter">
