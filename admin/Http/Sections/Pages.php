@@ -61,7 +61,7 @@ class Pages extends Section implements Initializable
             AdminFormElement::text('metadescription', 'metadescription'),
             AdminFormElement::text('h1', 'h1'),
             AdminFormElement::text('slug','Slug'),
-            AdminFormElement::text('seotext','wysiwyg'),
+            AdminFormElement::wysiwyg('seotext','Seo текст'),
         ]);
     }
     /**
