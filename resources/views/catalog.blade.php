@@ -109,7 +109,7 @@
                         {!! $products->appends(Request::capture()->except('page'))->links('includes.pagination') !!}
 
                         <div class="text">
-                            {{$page->seotext}}
+                            {!! $page->seotext !!}
                         </div>
                     </div>
                 </div>
