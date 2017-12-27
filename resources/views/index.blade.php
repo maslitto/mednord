@@ -55,42 +55,40 @@
                 <div class="section-title">
                     <h1>Медицинское оборудование</h1>
                 </div>
-                <!--div class="text">
-                    <p>Начав с небольшой московской фирмы, мы выросли в крупнейшего поставщика медицинской Техники и ТСР во всей России. Сегодня наша компания известна практически в любом медицинском учреждении и магазине медицинской техники.</p>
-                </div-->
+
                 <div class="flex-container">
                     <div class="flex-item-2">
-                        <a href="#" class="homeCatalog-item">
+                        <a href="{{$categories['cat1']->url}}" class="homeCatalog-item">
                             <img src="img/cat1.jpg" alt="Анастезиология  и реанимация">
-                            <span class="name">Анастезиология  и реанимация</span>
+                            <span class="name">Анастезиология и реанимация</span>
                         </a>
                     </div>
                     <div class="flex-item-4">
-                        <a href="#" class="homeCatalog-item">
+                        <a href="{{$categories['cat2']->url}}" class="homeCatalog-item">
                             <img src="img/cat2.jpg" alt="Эндоскопия">
                             <span class="name">Эндоскопия</span>
                         </a>
                     </div>
                     <div class="flex-item-4">
-                        <a href="#" class="homeCatalog-item">
+                        <a href="{{$categories['cat3']->url}}" class="homeCatalog-item">
                             <img src="img/cat3.jpg" alt="Рентгенология">
                             <span class="name">Рентгенология</span>
                         </a>
                     </div>
                     <div class="flex-item-4">
-                        <a href="#" class="homeCatalog-item">
+                        <a href="{{$categories['cat4']->url}}" class="homeCatalog-item">
                             <img src="img/cat4.jpg" alt="Хирургия">
                             <span class="name">Хирургия</span>
                         </a>
                     </div>
                     <div class="flex-item-2">
-                        <a href="#" class="homeCatalog-item">
+                        <a href="{{$categories['cat5']->url}}" class="homeCatalog-item">
                             <img src="img/cat5.jpg" alt="Функциональная диагностика">
                             <span class="name">Функциональная диагностика</span>
                         </a>
                     </div>
                     <div class="flex-item-4">
-                        <a href="#" class="homeCatalog-item">
+                        <a href="{{$categories['cat6']->url}}" class="homeCatalog-item">
                             <img src="img/cat6.jpg" alt="УЗИ(ультразвуковая диагностика)">
                             <span class="name">УЗИ(ультразвуковая диагностика)</span>
                         </a>
@@ -151,7 +149,6 @@
                                 <span>{{$post->title}}</span>
                             </div>
                         </a>
-
                     @endforeach
                 </div>
             </div>

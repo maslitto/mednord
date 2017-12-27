@@ -1,47 +1,41 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Be right back.</title>
+@extends('layouts.app')
 
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+@section('content')
+    <!-- BEGIN BODY -->
 
-        <style>
-            html, body {
-                height: 100%;
-            }
+    <div class="main-wrapper">
 
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                color: #B0BEC5;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato';
-            }
+        <!-- BEGIN CONTENT -->
 
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
+        <main class="content">
+            <section class="error">
+                <div class="wrapper">
+                    <div class="error-head">
+                        <a href="#" class="logo"><img src="img/logo.png" alt=""></a>
+                    </div>
+                    <div class="error-content">
+                        <div class="error-code">
+                            <div class="code-img">
+                                <img src="img/img-errorCode.png" alt="">
+                            </div>
+                            <div class="img-wrapper"><img src="img/img-error.png" alt=""></div>
+                        </div>
+                        <div class="error-descr">
+                            <span>Ошибка 404 означает, что страница, которую<br> Вы запрашиваете, не существует.</span>
+                            <span>Возможно, она была удалена, возможно, Вы набрали неправильный адрес.</span>
+                        </div>
+                        <a href="/" class="error-button">Перейти на главную</a>
+                    </div>
+                    <div class="error-footer">
+                        <span>&copy; 2017  ООО «Нордлайн» Все права защищены.</span>
+                    </div>
+                </div>
+            </section>
+        </main>
 
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
+        <!-- CONTENT EOF   -->
 
-            .title {
-                font-size: 72px;
-                margin-bottom: 40px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="content">
-                <div class="title">Be right back.</div>
-            </div>
-        </div>
-    </body>
-</html>
+    </div>
+
+
+@endsection

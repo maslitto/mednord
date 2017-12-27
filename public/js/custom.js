@@ -4,8 +4,7 @@ $(window).load(function(){
 	} else{
 		$('body').addClass('web');
 	};
-	$('body').removeClass('loaded');
-    $("input[name=robot]").val('fuck-u-robots');
+	$('body').removeClass('loaded'); 
 });
 /* viewport width */
 function viewport(){
@@ -19,7 +18,7 @@ function viewport(){
 	return { width : e[ a+'Width' ] , height : e[ a+'Height' ] }
 };
 /* viewport width */
-$(function(){
+$(document).ready(function(){
 	/* placeholder*/	   
 	$('input, textarea').each(function(){
  		var placeholder = $(this).attr('placeholder');
@@ -188,10 +187,18 @@ $(function(){
 	}
 
 	if($('.js-catalog-list').length) {
-		$('.js-catalog-list a').click(function(){
-			$(this).toggleClass('active');
-			$(this).next('ul').slideToggle();
+		$('.js-catalog-list li').find('ul').parent().addClass('chevron');
+		$('.js-catalog-list li.chevron').find('span').siblings('a').addClass('addBorder');
+		$('.js-catalog-list li span').click(function(){
+			$(this).parent().toggleClass('active');
+			if($(this).parent().hasClass('active')){
+				$(this).css({'transform' : 'rotate(90deg)'});
+			} else {
+				$(this).css({'transform' : 'rotate(0deg)'});
+			}
+			$(this).siblings('ul').slideToggle();
 		});
+		//$('.js-catalog-list li').find('ul').addClass('chevron');
 	};
 
 	if($('.js-styled').length) {
@@ -207,10 +214,8 @@ $(function(){
 
 	if($('.product').length){
 		$(".product .tab").click(function(){
-			index = $(this).index();
 			$(".product .tab").removeClass("active").eq($(this).index()).addClass("active");
-
-			$(".product .tab-item ").hide().eq($(this).index()).fadeIn()
+			$(".product .tab-item").hide().eq($(this).index()).fadeIn()
 		}).eq(0).addClass("active");
 	}
 
@@ -220,9 +225,7 @@ $(function(){
 			$(".about .tab-item").hide().eq($(this).index()).fadeIn()
 		}).eq(0).addClass("active");
 	}
-	$('.catalog-item .js-popup ').click(function(){
-		$('.popup-form input[name=title]').val($(this).data('product-title'));
-	})
+
 	if($('.js-popup').length){
 		$('.js-popup').magnificPopup({
 			fixedBgPos: true,
@@ -250,8 +253,9 @@ $(function(){
 	}
 
 	if($('form input[type="tel"]').length){
-		$('form input[type="tel"]').mask('+7999999999999')
+		$('form input[type="tel"]').mask('+7 (9999) 999-99-99')
 	}
+
 
 	/* components */
 	
@@ -266,12 +270,24 @@ var handler = function(){
 	//$('.content').css({'padding-bottom':height_footer+40, 'padding-top':height_header+40});
 	
 	
+	// var btn = document.querySelector('.footer-fullversion button');
+	// var viewport = document.querySelector("meta[name=viewport]");
+
+	// btn.addEventListener('click', function() {
+	// 	if ($(this).hasClass('getBack') == true) {
+	// 		viewport.setAttribute('content', 'width=device-width');
+	// 		$(this).parent().css({'display' : 'flex'});
+	// 		$(this).html("Полная версия").removeClass('getBack');
+	// 	}
+	// 	viewport.setAttribute('content', 'width=1200');
+	// 	$(this).parent().css({'display' : 'flex'});
+	// 	$(this).html("Мобильная версия").addClass('getBack');
+	// });
+
+
+
 	var viewport_wid = viewport().width;
 	var viewport_height = viewport().height;
-	
-	if (viewport_wid <= 991) {
-		
-	}
 	
 }
 $(window).bind('load', handler);
@@ -280,10 +296,10 @@ $(window).bind('resize', handler);
 function initMap() {
     var mapOptions = {
 		// How zoomed in you want the map to start at (always required)
-		zoom: 15,
+		zoom: 14,
 
 		// The latitude and longitude to center the map (always required)
-		center: new google.maps.LatLng(59.882112, 30.336572),
+		center: new google.maps.LatLng(59.9300611, 30.3563516),
 
 		// How you would like to style the map. 
 		// This is where you would paste any style found on Snazzy Maps.
@@ -373,6 +389,10 @@ function initMap() {
 	// We are using a div with id="map" seen below in the <body>
 	var mapElement = document.getElementById('map');
 
+	if(mapElement == null){
+		return;
+	}
+
 	// Create the Google Map using our element and options defined above
 	var map = new google.maps.Map(mapElement, mapOptions);
 
@@ -386,7 +406,7 @@ function initMap() {
 
 	// Let's also add a marker while we're at it
 	var marker = new google.maps.Marker({
-		position: new google.maps.LatLng(59.882112, 30.336572),
+		position: new google.maps.LatLng(59.9300611, 30.3563516),
 		map: map,
 		icon: markerImage,
 		title: 'Nordline'

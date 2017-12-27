@@ -33,7 +33,9 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('catalog/{subcategory?}', 'CatalogController@index')
         ->name('catalog')
         ->where('subcategory', '[a-zA-Z0-9/_-]+');
+
     Route::get('/products/{slug}', 'CatalogController@view')->name('product');
+    Route::get('/search', 'CatalogController@search')->name('search');
     Route::get('/kontakty', function () {
         return view('contacts');
     })->name('kontakty');

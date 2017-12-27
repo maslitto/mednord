@@ -12,11 +12,11 @@
                     <a href="/" class="logo">
                         <img src="/img/logo.png" alt="">
                     </a>
-                    <form class="header-search">
+                    <form class="header-search" action="/search" method="GET">
                         <div class="box-field">
                             <label for="" class="box-field__label"></label>
                             <div class="box-field__input">
-                                <input type="text" class="form-control" placeholder="Поиск">
+                                <input type="text" class="form-control" placeholder="Поиск оборудования" name="q">
                                 <input type="submit" class="search-btn">
                             </div>
                         </div>

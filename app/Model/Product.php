@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Eloquent\Model;
 use Slug;
+use File;
+use Image;
 
 class Product extends Model
 {
@@ -68,35 +70,28 @@ class Product extends Model
         else return ['https://dummyimage.com/300x300/ffffff/e07383.jpg&text=НЕТ+ФОТО'];
     }
 
-    public static function filter($params,$page)
+    public function resizeImages()
     {
-        $ids = [];
-        if(!$page->isLeaf()){
-            $leaves = $page->getLeaves();
+        if(count($this->images)>0){
+            foreach(config('images.product') as $size){
+                $path = public_path('images/resized/'.$size['w'].'x'.$size['h']);
+                File::isDirectory($path) or File::makeDirectory($path, 0777, true, true);
+                foreach($this->images as $image){
+                    if (!file_exists($path.basename($image))) {
+                        $background = Image::canvas($size['w'], $size['h'],'#fff');
 
-            foreach($leaves as $leaf){
-                $ids[] = $leaf->id;
+                        $resized = Image::make(public_path().'/'.$image)->resize($size['w'], $size['h'], function ($c) {
+                            $c->aspectRatio();
+                            $c->upsize();
+                        });
+                        $background->insert($resized, 'center');
+                        $background->save($path.'/'.basename($image));
+                    }
+                }
             }
-        }
-        else{
-            $ids[] = $page->id;
-        }
-        //dd($ids);
-        $products = self::whereIn('category_id',$ids);
-        if(!empty($params['sortby'])){
-            $products = $products->orderBy('updated_at',$params['sortby']);
-        }
-        else{
-            $products = $products->orderBy('updated_at','DESC');
-        }
-        $products->get();
-        if(isset($params['per_page'])){
-            $products = $products->paginate($params['per_page']);
-        }
-        else{
-            $products = $products->paginate(12);
-        }
 
-        return $products;
+        }
     }
+
+
 }

@@ -195,69 +195,109 @@ section{
 		width: 100%;
 		border: 1px solid #e7e7e7;
 		margin-bottom: 24px;
+		a:hover{
+			color: #fff;
+		}
 		li{
 			display: block;
-			&:last-child a{
+			position: relative;
+			border-bottom: 1px solid #e7e7e7;
+			@include transition($default-transition);
+			&:last-child{
 				border-bottom: none;
+				a{
+					border-bottom: none;
+				}
 			}
-			padding-left: 35px;
-			&:hover{
-				background-color: $main-color;
-				.catalog-list__secondary{
-					li{
-						a{
-							&:after{
-								display: none;
-							}
+			&.chevron{
+				span{
+					cursor: pointer;
+					display: block;
+					position: absolute;
+					top: 0;
+					right: 0;
+					width: 25px;
+					height: 44px;
+					background: transparent url(../img/arrow.png) no-repeat center;
+					background-size: 5px 8px;
+					z-index: 99;
+				}
+				a{
+					position: relative;
+					&:after{
+						content: '';
+						position: absolute;
+						opacity: 0;
+						display: block;
+						height: 100%;
+						width: 25px;
+						right: 0;
+						top: 0;
+						border-left: 1px solid #e7e7e7;
+					}
+					&:hover{
+						background-color: $main-color;
+						color: #fff;
+					}
+					&:hover ~ span{
+						background: transparent url(../img/arrow-white.png) no-repeat center;
+						background-size: 5px 8px;
+					}
+					&.addBorder{
+						//border-bottom: 1px solid #e7e7e7;
+						&:after{
+							opacity: 1;
 						}
 					}
 				}
 			}
-			&:hover > a{
-				color: #fff;
-				&:after{
-					background: transparent url(../img/arrow-white.png) no-repeat center;
-					background-size: contain;
+			&.active{
+				.addBorder{
+					border-bottom: 1px solid #e7e7e7;
 				}
 			}
 		}
 		a{
 			display: block;
 			padding: 15px 25px 15px 20px;
-			border-bottom: 1px solid #e7e7e7;
 			font-size: 13px;
 			color: #333;
 			position: relative;
-			&:after{
-				content: '';
-				display: block;
-				position: absolute;
-				top: 50%;
-				margin-top: -5px;
-				right: 20px;
-				width: 5px;
-				height: 10px;
-				background: transparent url(../img/arrow.png) no-repeat center;
-				background-size: contain;
-			}
-			&.active{
-				&:after{
-					@include transform(rotate(90deg));
-				}
-			}
+			&:hover{
+				color: #fff;
+				background-color: $main-color;
+			}			
 		}
 		&__secondary{
 			display: none;
 			li{
 				background-color: $grey-color;
-				&:last-child{
-					a{
-						border-bottom: 1px solid #e7e7e7;;
+				a{
+					color: #666 !important;	
+					padding-left: 20px;
+					position: relative;
+					&:hover{
+						color: #FFF;
 					}
 				}
 			}
-			a{
-				color: #666;
+			ul{
+				a{
+					padding-left: 30px;
+				}
+				ul{
+					a{
+						padding-left: 40px;
+					}
+				}
+				ul{
+					a{
+						padding-left: 50px;
+					}
+				}
+			}
+			a:hover{
+				color: #fff !important;
 			}
 		}
 	}
@@ -583,6 +623,7 @@ section{
 @import 'pages/_home';
 @import 'pages/_page';
 @import '_popup';
+@import 'pages/_error';
 
 
 

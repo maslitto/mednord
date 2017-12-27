@@ -67,7 +67,10 @@ class Products extends Section implements Initializable
      */
     public function onEdit($id)
     {
-    	$leaves = \App\Model\Page::where('parent_id', 2)->first()->getLeaves();
+    	$page = \App\Model\Page::find(2);
+
+    	$leaves = $page->getLeaves();
+    	//dd($leaves);
     	foreach($leaves as $leaf){
     		$options[$leaf->id] = $leaf->title;
     	}

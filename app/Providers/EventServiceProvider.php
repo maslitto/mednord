@@ -7,9 +7,11 @@ use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvi
 use App\Model\Product;
 use App\Model\Banner;
 use App\Model\Question;
+use App\Model\Page;
 use File;
 use Image;
 use Mail;
+
 class EventServiceProvider extends ServiceProvider
 {
     /**
@@ -32,73 +34,21 @@ class EventServiceProvider extends ServiceProvider
     {
         parent::boot();
 
+        Page::updated(function($page){
+            Page::rebuild();
+
+        });
         Product::created(function($product) {
-            if(count($product->images)>0){
-                foreach(config('images.product') as $size){
-                    $path = public_path('images/resized/'.$size['w'].'x'.$size['h']);
-                    File::isDirectory($path) or File::makeDirectory($path, 0777, true, true);
-                    foreach($product->images as $image){
-                        if (!file_exists($path.basename($image))) {
-                            $background = Image::canvas($size['w'], $size['h'],'#fff');
-
-                            $resized = Image::make(public_path().'/'.$image)->resize($size['w'], $size['h'], function ($c) {
-                                $c->aspectRatio();
-                                $c->upsize();
-                            });
-                            $background->insert($resized, 'center');
-                            $background->save($path.'/'.basename($image));
-                        }
-                    }
-                }
-
-            }
+            $product->resizeImages();
         });
         Product::updated(function($product) {
-            if(count($product->images)>0){
-                foreach(config('images.product') as $size){
-                    $path = public_path('images/resized/'.$size['w'].'x'.$size['h']);
-                    File::isDirectory($path) or File::makeDirectory($path, 0777, true, true);
-                    foreach($product->images as $image){
-                        if (!file_exists($path.basename($image))) {
-                            $background = Image::canvas($size['w'], $size['h'],'#fff');
-
-                            $resized = Image::make(public_path().'/'.$image)->resize($size['w'], $size['h'], function ($c) {
-                                $c->aspectRatio();
-                                $c->upsize();
-                            });
-                            $background->insert($resized, 'center');
-                            $background->save($path.'/'.basename($image));
-                        }
-                    }
-                }
-
-            }
+            $product->resizeImages();
         });
         Banner::created(function($banner) {
-            if(!empty($image = $banner->image)){
-                foreach(config('images.banner') as $size){
-                    $path = public_path('images/resized/'.$size['w'].'x'.$size['h']);
-                    File::isDirectory($path) or File::makeDirectory($path, 0777, true, true);
-                    if (!file_exists($path.basename($image))) {
-                        $resized  = Image::make(public_path().'/'.$image)->fit($size['w'], $size['h']);
-                        $resized->save($path.'/'.basename($image));
-                    }
-                }
-
-            }
+            $banner->resizeImages();
         });
         Banner::updated(function($banner) {
-            if(!empty($image = $banner->image)){
-                foreach(config('images.banner') as $size){
-                    $path = public_path('images/resized/'.$size['w'].'x'.$size['h']);
-                    File::isDirectory($path) or File::makeDirectory($path, 0777, true, true);
-                    if (!file_exists($path.basename($image))) {
-                        $resized  = Image::make(public_path().'/'.$image)->fit($size['w'], $size['h']);
-                        $resized->save($path.'/'.basename($image));
-                    }
-                }
-
-            }
+            $banner->resizeImages();
         });
         Question::created(function($banner){
             Mail::raw('Заявка с сайта', function($message)

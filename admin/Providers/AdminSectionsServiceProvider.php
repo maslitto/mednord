@@ -2,7 +2,6 @@
 
 namespace Admin\Providers;
 
-use Admin\Http\Sections\Contacts;
 use Admin\Policies\ContactsSectionModelPolicy;
 use Illuminate\Routing\Router;
 use SleepingOwl\Admin\Contracts\Navigation\NavigationInterface;
@@ -32,7 +31,6 @@ class AdminSectionsServiceProvider extends ServiceProvider
         'App\Model\Product'            => 'Admin\Http\Sections\Products',
         'App\Model\Question'            => 'Admin\Http\Sections\Questions',
         'App\Model\Vendor'            => 'Admin\Http\Sections\Vendors',
-
         'App\Role'                  => 'Admin\Http\Sections\Roles',
         'App\User'                  => 'Admin\Http\Sections\Users',
     ];
