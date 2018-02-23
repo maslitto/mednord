@@ -19,7 +19,7 @@ class QuestionController extends Controller
         $rules = [
             'name' => 'required|max:255',
             'phone' => 'required',
-            'robot' => 'in:fuck-u-robots',
+            'robot' => 'in:fuck-robots',
             'email' => 'required|max:255'
         ];
         $messages = [

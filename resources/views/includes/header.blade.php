@@ -26,7 +26,7 @@
                         <div class="header-contacts__bottom">Режим работы с 9 до 18 часов</div>
                     </div>
                     <div class="header-feedback hidden-sm">
-                        <a href="#request-price" class="main-btn js-popup">Заказать звонок</a>
+                        <a href="#callback" class="main-btn js-popup">Заказать звонок</a>
                     </div>
                     <button class="mobileSearch-btn visible-sm"></button>
                 </div>

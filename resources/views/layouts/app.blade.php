@@ -80,6 +80,46 @@
         </form>
         <div class="descr">Коммерческое предложение с максимальной скидкой будет направлено Вам по электронной почте.</div>
     </div>
+    <div class="popup" id="callback">
+        <div class="popup-title">Заказ звонка</div>
+        <div class="popup-sub-title">Все поля обязательны для заполнения</div>
+        <form class="popup-form" method="POST" action="question/save">
+        {!! csrf_field() !!}
+        <!--div class="box-field">
+                <label class="box-field__label">Наименование оборудования:</label>
+                <div class="box-field__input">
+                    <input type="text" class="form-control" name="title" placeholder="Siemens Aloka ProSound F99 (Россия)">
+                </div>
+            </div-->
+            <div class="box-field">
+                <label class="box-field__label">Представьтесь:</label>
+                <div class="box-field__input">
+                    <input type="text" class="form-control" name="name" required placeholder="Введите Ваше Имя">
+                </div>
+            </div>
+            <div class="box-field">
+                <label class="box-field__label">Организация:</label>
+                <div class="box-field__input">
+                    <input type="text" class="form-control" name="company" required placeholder="Введите название компании">
+                </div>
+            </div>
+            <div class="box-field">
+                <label class="box-field__label">Электронный адрес:</label>
+                <div class="box-field__input">
+                    <input type="email" class="form-control" name="email" required placeholder="Введите Ваш  e-mail">
+                </div>
+            </div>
+            <div class="box-field">
+                <label class="box-field__label">Контактный телефон:</label>
+                <div class="box-field__input">
+                    <input type="tel" class="form-control" name="phone" required placeholder="+74959876543">
+                </div>
+            </div>
+            <input type="submit" value="Отправить" class="main-btn white">
+            <input type="hidden" value="" name="robot">
+        </form>
+        <!--div class="descr">Коммерческое предложение с максимальной скидкой будет направлено Вам по электронной почте.</div-->
+    </div>
 </div>
 
 <div class="icon-load"></div>
@@ -113,6 +153,9 @@
 
 -->
 <script type="text/javascript" src="/js/custom.js" ></script>
+<script>
+    $('input[name=robot]').val('fuck-robots');
+</script>
 </body>
 @show
 </html>

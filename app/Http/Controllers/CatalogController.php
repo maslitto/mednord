@@ -39,7 +39,12 @@ class CatalogController extends Controller
         $children = Page::where('parent_id' , $page->id)->get();
         if($page->isLeaf()){
             $params = $request->all();
-            $products = $this->productRepository->filter($params,$page);
+            if($page->slug == 'ves-spisok'){
+                $products = $this->productRepository->filter($params);
+            } else {
+                $products = $this->productRepository->filter($params,$page);
+            }
+
             $vendors = Vendor::all();
 
             return view('catalog',[

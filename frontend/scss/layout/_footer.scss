@@ -1,0 +1,169 @@
+
+/*
+================================================================================
+|                                     FOOTER                                   |
+================================================================================
+*/
+footer{
+	background:#333; 	
+	text-align:left;
+	width:100%;
+	min-width: $min-width;
+	order: 3;	
+    -webkit-order: 3;	
+}
+
+.footer{
+	&-top{
+		background-color: $main-color;
+		color: #fff;
+		padding: 40px 0;
+	}
+	&-container{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.flex-container{
+		justify-content: space-between;
+	}
+	.flex-item-3, .flex-item-4, .flex-item-5{
+		max-width: 100%;
+		flex-grow: 1;
+	}
+	h2{
+		display: flex;
+		align-items: center;
+		color: #fff;
+		flex: 1 1 300px;
+		max-width: 320px;
+		padding-bottom: 0;
+	}
+	.icon-next{
+		margin-left: 50px;
+	}
+	.text{
+		flex: 1 1 300px;
+		padding: 0 30px;
+		p{
+			color: #fff;
+		}
+	}
+	.main-btn{
+		flex: 1 1 300px;
+	}
+	&-bottom{
+		background-color: #333;
+		padding: 60px 0 50px;
+		color: #fff;
+		a{
+			color: #fff;
+			&:hover{
+				text-decoration: underline;
+			}
+		}
+	}
+	&-socials{
+		margin-bottom: 45px;
+		&__title{
+			opacity: .7;
+			margin-bottom: 24px;
+		}
+		&-list{
+			display: flex;
+			align-items: center;
+			li{
+				margin-right: 10px;
+				&:last-child{
+					margin-right: 0;
+				}
+			}
+			a{
+				display: block;
+				opacity: 1;
+				&:hover{
+					opacity: .6;
+				}
+			}
+		}
+	}
+	&-rights{
+		line-height: 24px;
+		font-size: 13px;
+		line-height: 17px;
+	}
+	&-nav{
+		&-list{
+			display: flex;
+			flex-wrap: wrap;
+			li{
+				width: 50%;
+				max-width: 50%;
+				margin-bottom: 15px;
+			}
+		}
+	}
+	&-title{
+		display: block;
+		opacity: .7;
+		font-weight: 700;
+		font-size: 17px;
+		text-transform: uppercase;
+		margin-bottom: 30px;
+	}
+	&-tel{
+		font-size: 24px;
+		font-weight: 700;
+		display: block;
+		margin-bottom: 20px;
+	}
+	&-contacts{
+		span{
+			display: block;
+			opacity: 1;
+			margin-bottom: 7px;
+		}
+		strong{
+			opacity: .7;
+			font-weight: 400;
+		}
+		.designer{
+			margin-top: 60px;
+			a{
+				color: $main-color;
+			}
+		}
+	}
+}
+
+.footer-fullversion{
+	padding: 20px;
+	display: flex;
+	justify-content: center;
+	.main-btn{
+		margin: 0 auto;
+	}
+}
+
+
+
+@media screen and (max-width: 1200px) {
+	
+}
+
+@media screen and (min-width: 992px){
+	
+}
+
+@media screen and (max-width: 991px) {
+	
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+	
+}
+
+@media screen and (max-width: 767px) {
+	
+}

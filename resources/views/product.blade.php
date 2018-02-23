@@ -39,9 +39,9 @@
 							@endif
 							<h1 class="name">{{$product->title}}</h1>
 							<div class="price">Цена: <span></span></div>
-							<a href="#request-price" class="price-button js-popup">Запросить цену</a>
+							<a href="#request-price" class="price-button js-popup"  onclick="$('.popup-form input[name=title]').val($('h1.name').text())">Запросить цену</a>
 							<div class="short-info">
-								<div class="title">
+								<!--div class="title">
 									Характеристики
 								</div>
 								<div class="short-info-container">
@@ -54,7 +54,7 @@
 											</div>
 										@endforeach
 									@endif
-								</div>
+								</div-->
 							</div>
 							<div class="share">
 								<div class="share-title">
@@ -94,7 +94,7 @@
 									@endforeach
 								@endif
 							</div>
-						</div  id="tab1">
+						</div>
 					</div>
 				</div>
 			</div>

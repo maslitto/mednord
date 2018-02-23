@@ -8,6 +8,7 @@
 namespace App\Repository;
 
 use App\Model\Product;
+use App\Model\Page;
 
 class ProductRepository
 {
@@ -16,9 +17,19 @@ class ProductRepository
      * @param $page
      * @return mixed
      */
-    public function filter($params,$page)
+    public function filter($params, $page = NULL)
     {
-        $products = Product::where('category_id',$page->id);
+        if($page == NULL){
+            $leaves = Page::find(2)->allLeaves()->get();
+            $ids = [];
+            foreach($leaves as $leaf){
+                $ids[] = $leaf->id;
+            }
+            $products = Product::whereIn('category_id', $ids);
+        } else{
+            $products = Product::where('category_id',$page->id);
+        }
+
         if(!empty($params['sortby'])){
             $products = $products->orderBy('updated_at',$params['sortby']);
         } else{

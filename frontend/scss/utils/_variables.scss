@@ -1,0 +1,35 @@
+/* reset */
+$min-width: 320px; 
+$max-width: 1200px; 
+$base-bg: #FFF; 
+$base-font-size: 15px; 
+$base-line-height: 1; 
+$base-font-family: 'PTSansCaption',Arial, sans-serif; 
+$custom-font-family: 'PTSansCaption', sans-serif; 
+$default-transition:all 0.4s linear;
+
+/* main variables */
+
+// colors 
+$main-color: #107bb1;
+$main-hover: #3da5d9;
+
+$grey-color: #f7f7f8;
+
+$custom-color: #000;
+$custom-hover: #333;
+
+//text, titles
+$text-color: #333;
+$title-color: #333333;
+$title-font-family: $custom-font-family;
+
+$link-color: $main-color;
+$link-hover: $main-hover;
+
+$font-size-h1: 34px;
+$line-height-h1: 40px;
+$font-size-h2: 34px;
+$line-height-h2: 40px;
+$font-size-h3: 24px;
+$line-height-h3: 32px;

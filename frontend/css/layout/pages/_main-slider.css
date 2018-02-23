@@ -1,0 +1,9 @@
+.mainSlider-item {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  padding: 120px 0 100px; }
+  .mainSlider-item img {
+    width: 100%;
+    height: auto; }

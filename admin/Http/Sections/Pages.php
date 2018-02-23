@@ -44,7 +44,7 @@ class Pages extends Section implements Initializable
      */
     public function onDisplay()
     {
-        return AdminDisplay::tree()->setValue('title');
+        return AdminDisplay::tree()->setOrderField('title')->setValue('title');
     }
     /**
      * @param int $id

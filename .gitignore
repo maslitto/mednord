@@ -10,3 +10,4 @@ composer.lock
 Homestead.json
 Homestead.yaml
 .env
+/frontend/node_modules

@@ -30,6 +30,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
     Route::get('/', 'IndexController@index')->name('home');
+
     Route::get('catalog/{subcategory?}', 'CatalogController@index')
         ->name('catalog')
         ->where('subcategory', '[a-zA-Z0-9/_-]+');
