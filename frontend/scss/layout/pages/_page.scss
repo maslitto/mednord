@@ -1,3 +1,8 @@
+.info-page{
+	ul {
+		padding: 10px 0 10px 20px;
+	}
+}
 .pageHead{
 	background-color: $grey-color;
 	padding-top: 30px;
@@ -45,7 +50,7 @@
 	.text{
 		margin-bottom: 70px;
 		p{
-			text-indent: 25px;
+			//text-indent: 25px;
 		}
 	}
 	.container{

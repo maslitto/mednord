@@ -13,7 +13,7 @@
 			</div>
 		</div>
 
-		<div class="about">
+		<div class="info-page">
 			<div class="wrapper">
 				{!! $page->seotext !!}
 			</div>
