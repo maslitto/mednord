@@ -24,7 +24,6 @@
 
 <div class="main-wrapper">
 
-
     @include('includes.header')
 
     <!-- BEGIN CONTENT -->

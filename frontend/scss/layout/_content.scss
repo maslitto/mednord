@@ -59,7 +59,7 @@ h2{
 h3{
 	@include font($font-size-h3,$line-height-h3,$title-color);
 	font-family: $title-font-family;	
-	padding-bottom: 25px;
+	padding-top: 15px;
 	font-weight: 700;
 }
 

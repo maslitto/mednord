@@ -33,7 +33,7 @@ class Page extends Node
         if(isset($value)){
             return $value;
         } else {
-            return 'https://dummyimage.com/400x400/ffffff/107bb1.jpg&text=НЕТ+ФОТО';
+            return '/img/empty.png';
         }
     }
 }

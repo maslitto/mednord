@@ -21,16 +21,16 @@
                         <div class="flex-container">
                             @foreach($children as $category)
                                 <div class="flex-item-3">
-                                <div class="category-item">
+                                    <div class="category-item">
 									<span class="img-wrapper">
                                         <a href="{{$category->url}}"><img src="{{$category->image}}" alt=""></a>
 									</span>
-                                    <div class="text">
-                                        <h3 class="name text-center">{{$category->title}}</h3>
+                                        <div class="text">
+                                            <h3 class="name text-center">{{$category->title}}</h3>
+                                        </div>
+                                        <span class="button-container"><a href="{{$category->url}}">Перейти в раздел</a></span>
                                     </div>
-                                    <span class="button-container"><a href="{{$category->url}}">Перейти в раздел</a></span>
                                 </div>
-                            </div>
                             @endforeach
                         </div>
                     </div>

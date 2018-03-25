@@ -26,7 +26,7 @@
                     </div>
                     <div class="features-item">
                         <i class="icon-feature delivery"></i>
-                        <h4>Бесплатная доставка по России</h4>
+                        <h4>Доставка по всей России</h4>
                         <p>Доставим в любой регион бесплатно</p>
                     </div>
                     <div class="features-item">

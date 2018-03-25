@@ -37,6 +37,7 @@ class CatalogController extends Controller
         }
         $categories = Page::where('parent_id' , 2)->get();
         $children = Page::where('parent_id' , $page->id)->get();
+
         if($page->isLeaf()){
             $params = $request->all();
             if($page->slug == 'ves-spisok'){
@@ -53,7 +54,9 @@ class CatalogController extends Controller
                 'vendors' => $vendors,
                 'page' => $page,
             ]);
+
         }else{
+
             return view('category',[
                 'categories' => $categories,
                 'page' => $page,

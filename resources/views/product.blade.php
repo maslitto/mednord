@@ -85,13 +85,22 @@
 						<div class="tab-item"  id="tab2">
 							<div class="text">
 								@if($product->params)
-									@foreach($product->params as $param)
-										<div class="short-info__item">
-											<span>{{$param['name']}}</span>
-											<div class="dots"></div>
-											<span class="value">{{$param['value']}}</span>
-										</div>
-									@endforeach
+									<table class="table">
+										<thead>
+										<tr>
+											<th>Параметр</th>
+											<th>Значение</th>
+										</tr>
+										</thead>
+										<tbody>
+										@foreach($product->params as $param)
+											<tr>
+												<td>{{$param['name']}}</td>
+												<td>{{$param['value']}}</td>
+											</tr>
+										@endforeach
+										</tbody>
+									</table>
 								@endif
 							</div>
 						</div>

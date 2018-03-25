@@ -54,14 +54,15 @@ class Pages extends Section implements Initializable
     public function onEdit($id)
     {
         return AdminForm::form()->setElements([
+            AdminFormElement::image('image','Картинка'),
             AdminFormElement::text('title', 'Заголовок')->required(),
-           // AdminFormElement::ckeditor('text', 'Text'),
             AdminFormElement::text('metatitle', 'metatitle'),
             AdminFormElement::text('metakeywords', 'metakeywords'),
             AdminFormElement::text('metadescription', 'metadescription'),
             AdminFormElement::text('h1', 'h1'),
             AdminFormElement::text('slug','Slug'),
             AdminFormElement::wysiwyg('seotext','Seo текст'),
+            // AdminFormElement::ckeditor('text', 'Text'),
         ]);
     }
     /**

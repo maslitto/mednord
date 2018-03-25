@@ -61,13 +61,13 @@ class Product extends Model
     {
         $images = $this->getBaseImagesAttribute(NULL);
         if(count($images)>0){
-            foreach($images as $k=>$image) {
+            foreach($images as $k => $image) {
                 $images[$k] = 'images/resized/'.$value.'/'.$image;
             }
             return $images;
         }
 
-        else return ['https://dummyimage.com/300x300/ffffff/e07383.jpg&text=НЕТ+ФОТО'];
+        else return ['/img/empty.png'];
     }
 
     public function resizeImages()
