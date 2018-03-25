@@ -263,24 +263,7 @@
 }
 
 .product{
-	table{
-		border-collapse: unset;
-		border-width: 0px;
-		padding: 0px;
-		margin: 0px;
-		width: 80%;
-		tr:nth-of-type(2n+1) {
-			background-color: rgba(0,0,0,.05);
-		}
-		td {
-			border: 1px solid #ccc;
-			padding: 10px;
-		}
-		th {
-			border: 1px solid #ccc;
-			padding: 10px;
-		}
-	}
+
 	padding-top: 25px;
 	&-container{
 		display: flex;
