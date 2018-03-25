@@ -15,7 +15,7 @@
 
 		<div class="about">
 			<div class="wrapper">
-				{{$page->seotext}}
+				{!! $page->seotext !!}
 			</div>
 		</div>
 	</main>	
