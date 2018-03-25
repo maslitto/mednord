@@ -2,6 +2,7 @@
 	background-color: $grey-color;
 	padding-top: 30px;
 	.breadcrumbs{
+		list-style-type: none;
 		margin-bottom: 20px;
 		display: flex;
 		flex-wrap: wrap;
