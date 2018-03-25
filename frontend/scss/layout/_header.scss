@@ -118,6 +118,7 @@ header{
 			}
 		}
 		&-list{
+			list-style-type: none;
 			display: flex;
 			flex-wrap: wrap;
 			flex-grow: 1;

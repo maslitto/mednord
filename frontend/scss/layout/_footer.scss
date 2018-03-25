@@ -71,6 +71,7 @@ footer{
 			margin-bottom: 24px;
 		}
 		&-list{
+			list-style-type: none;
 			display: flex;
 			align-items: center;
 			li{
@@ -95,6 +96,7 @@ footer{
 	}
 	&-nav{
 		&-list{
+			list-style-type: none;
 			display: flex;
 			flex-wrap: wrap;
 			li{
