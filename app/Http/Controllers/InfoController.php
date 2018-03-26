@@ -7,7 +7,7 @@ use App\Model\News;
 use App\Model\Vendor;
 use App\Model\Page;
 
-class ContentController extends Controller
+class InfoController extends Controller
 {
     /**
      * Content page controller

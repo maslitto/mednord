@@ -46,5 +46,5 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/proizvoditeli/', 'VendorController@index');
     Route::get('/proizvoditeli/{slug?}', 'VendorController@view');
     Route::post('/question/save', 'QuestionController@save');
-    Route::get('/{slug}', 'ContentController@index');
+    Route::get('/info/{slug}', 'InfoController@index');
 });

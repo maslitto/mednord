@@ -4,9 +4,17 @@ table{
 	padding: 0px;
 	margin: 0px;
 	width: 80%;
-	tr:nth-of-type(2n+1) {
-		background-color: rgba(0,0,0,.05);
+	thead{
+		tr:nth-of-type(2n+1) {
+			background-color: rgba(61, 165, 217,.05);
+		}
 	}
+	tbody{
+		tr:nth-of-type(2n+1) {
+			background-color: rgba(0,0,0,.05);
+		}
+	}
+
 	td {
 		border: 1px solid #ccc;
 		padding: 10px;
