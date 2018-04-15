@@ -16,7 +16,7 @@ class InfoController extends Controller
      */
     public function index($slug)
     {
-        $page = Page::where(['slug' => $slug])->firstOrFail();
+        $page = Page::where('slug',"LIKE",'%'.$slug.'%')->firstOrFail();
         return view('content',[
             'page' => $page,
         ]);
