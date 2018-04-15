@@ -57,7 +57,6 @@
 				<div id="map"></div>
 			</div>
 		</div>
-	</main>	
-			
+	</main>
 <!-- CONTENT EOF   -->	
 @endsection

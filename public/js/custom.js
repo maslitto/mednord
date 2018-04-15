@@ -299,7 +299,7 @@ function initMap() {
 		zoom: 14,
 
 		// The latitude and longitude to center the map (always required)
-		center: new google.maps.LatLng(59.9300611, 30.3563516),
+		center: new google.maps.LatLng(59.8825844,30.3329941),
 
 		// How you would like to style the map. 
 		// This is where you would paste any style found on Snazzy Maps.
@@ -406,7 +406,7 @@ function initMap() {
 
 	// Let's also add a marker while we're at it
 	var marker = new google.maps.Marker({
-		position: new google.maps.LatLng(59.9300611, 30.3563516),
+		position: new google.maps.LatLng(59.8825844,30.3329941),
 		map: map,
 		icon: markerImage,
 		title: 'Nordline'

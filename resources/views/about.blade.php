@@ -33,9 +33,11 @@
 					<div class="pageContent tab">
 						<div class="text tab-item">
 							<h3>НОРДЛАЙН  -  Красивый слоган компании или девиз!</h3>
-							<p class="quote">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-							<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
-							<p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.</p>
+							<p class="">«Нордлайн» - надежный партнер, ориентированный на максимально полное и эффективное удовлетворения потребностей клиентов путем комплексного подхода к оснащению ЛПУ.
+								Для успеха и процветания современным медицинском учреждениям необходимо качественное медицинское оборудование.</p>
+							<p class="">Наши решения помогут Вам динамично развиваться и достигать максимальных результатов при минимальных затратах.
+								За время работы у нас сложились хорошие партнерские отношения с заводами-производителями медицинского оборудования и комплектующих, позволяющее формировать гибкую ценовую политику во взаимоотношениях с Заказчиками.</p>
+							<br>
 							<div class="img-wrapper">
 								<img src="img/img-article.png" alt="">
 							</div>
