@@ -16,10 +16,10 @@
 		<div class="contacts">
 			<div class="wrapper">
 				<div class="contacts-container">
-					<div class="contacts-text">
+					<!--div class="contacts-text">
 						<p>Хотите заказать медицинское оборудование для вашей клиники, рассчитать стоимость доставку лизинг или просто пообщаться и задать вопрос?</p>
 						<p>Пишите письма, звоните или заходите в гости – наш офис находится недалеко от м.Электросила. </p>
-					</div>
+					</div-->
 					<div class="contacts-info">
 						<div class="contacts-info__item">
 							<i class="icon-contacts address"></i>
