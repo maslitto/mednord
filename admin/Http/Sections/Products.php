@@ -55,6 +55,7 @@ class Products extends Section implements Initializable
     public function onDisplay()
     {
         return AdminDisplay::table()->setColumns([
+            AdminColumn::text('id', '#'),
             AdminColumn::link('title', 'Наименование'),
 
         ])->paginate(20);
@@ -112,7 +113,7 @@ class Products extends Section implements Initializable
                 ->setModelForOptions(\App\Model\Vendor::class)
                 ->setHtmlAttribute('placeholder', 'Производитель')
                 ->nullable()
-                ->setDisplay('title'),
+                ->setDisplay('title')
                 ->required(),
 
             AdminFormElement::checkbox('hit', 'Hit'),
