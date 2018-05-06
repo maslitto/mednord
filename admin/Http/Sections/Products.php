@@ -89,7 +89,8 @@ class Products extends Section implements Initializable
             //->setModelForOptions(\App\Model\Page::class)
         	->setOptions($options)
             ->setHtmlAttribute('placeholder', 'Категория')
-            ->setDisplay('title');
+            ->setDisplay('title')
+            ->required();
         $param = AdminFormElement::custom(function ($model) {
             //$model->title = 'params';
         })->setDisplay(function ($model) {
@@ -113,8 +114,8 @@ class Products extends Section implements Initializable
                 ->setModelForOptions(\App\Model\Vendor::class)
                 ->setHtmlAttribute('placeholder', 'Производитель')
                 ->nullable()
-                ->setDisplay('title')
-                ->required(),
+                ->setDisplay('title'),
+                //->required(),
 
             AdminFormElement::checkbox('hit', 'Hit'),
             AdminFormElement::checkbox('new', 'New'),
