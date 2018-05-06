@@ -113,7 +113,7 @@ class Products extends Section implements Initializable
                 ->setHtmlAttribute('placeholder', 'Производитель')
                 ->nullable()
                 ->setDisplay('title'),
-                //->required(),
+                ->required(),
 
             AdminFormElement::checkbox('hit', 'Hit'),
             AdminFormElement::checkbox('new', 'New'),
