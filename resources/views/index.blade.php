@@ -108,7 +108,7 @@
                         <div class="section-title">
                             <h2 class="hidden-xs">О компании</h2>
                         </div>
-                        <p>Наша компания  уже более 6 лет  занимается поставками медицинского оборудования по всей России. За это время мы накопили огромный опыт работы с клинетами. Сегодня наша компания известна практически в любом медицинском учреждении и магазине медицинской техники.</p>
+                        <p>Наша компания уже более 6 лет занимается поставками медицинского оборудования и комплектующих. За это время мы накопили огромный опыт работы с клинетами и производителями.Мы с радостью решим Ваши задачи в кротчайшие сроки.</p>
                         <div class="homeAbout-features">
                             <div class="homeAbout-features__item">
                                 <span class="number">42</span>
@@ -140,7 +140,7 @@
                 </div>
                 <div class="lastNews-slider js-lastNews-slider dots-out">
                     @foreach($news as $post)
-                        <a href="#" class="lastNews-item">
+                        <a href="{{ $post->url }}" class="lastNews-item">
                             <div class="img-wrapper">
                                 <img src="{{$post->image}}" alt="{{$post->title}}">
                             </div>

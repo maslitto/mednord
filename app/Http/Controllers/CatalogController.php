@@ -43,7 +43,7 @@ class CatalogController extends Controller
             if($page->slug == 'ves-spisok'){
                 $products = $this->productRepository->filter($params);
             } else {
-                $products = $this->productRepository->filter($params,$page);
+                $products = $this->productRepository->filter($params, $page);
             }
 
             $vendors = Vendor::all();
@@ -75,6 +75,7 @@ class CatalogController extends Controller
         $product = Product::where('slug' , $slug)->firstOrFail();
         return view('product',[
             'product' => $product,
+            'page' => $product,
         ]);
     }
 

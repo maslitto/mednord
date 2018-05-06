@@ -6,13 +6,7 @@
 	<main class="content">		
 		<div class="pageHead">
 			<div class="wrapper">
-				<ul class="breadcrumbs">
-					<li><a href="/">Главная</a></li>
-					<li><a href="#">О компании</a></li>
-				</ul>
-				<div class="pageTitle">
-					<h1>О компании</h1>
-				</div>
+				{!! Breadcrumbs::renderIfExists($page->slug) !!}
 			</div>
 		</div>
 

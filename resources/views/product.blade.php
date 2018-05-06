@@ -6,7 +6,7 @@
 	<main class="content">		
 		<div class="pageHead">
 			<div class="wrapper">
-
+				{!! Breadcrumbs::renderIfExists() !!}
 			</div>
 		</div>
 		

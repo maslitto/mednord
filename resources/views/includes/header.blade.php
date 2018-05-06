@@ -23,7 +23,7 @@
                     </form>
                     <div class="header-contacts hidden-sm">
                         <div class="header-contacts__top"><i class="icon-tel"></i><a href="#+78126027847">{{config('app.phone')}}</a></div>
-                        <div class="header-contacts__bottom">Режим работы с 9 до 18 часов</div>
+                        <div class="header-contacts__bottom">Режим работы с 9:00 до 18:00 (пн-пт)</div>
                     </div>
                     <div class="header-feedback hidden-sm">
                         <a href="#callback" class="main-btn js-popup">Заказать звонок</a>

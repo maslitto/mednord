@@ -47,7 +47,17 @@ class Questions extends Section implements Initializable
     {
         $this->addToNavigation()->setIcon('fa fa-question');
     }
-
+    /**
+     * Переопределение метода для запрета удаления записи
+     *
+     * @param \Illuminate\Database\Eloquent\Model $model
+     *
+     * @return bool
+     */
+    public function isDeletable(\Illuminate\Database\Eloquent\Model $model)
+    {
+        return true;
+    }
 
     /**
      * @return DisplayInterface

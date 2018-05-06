@@ -48,7 +48,17 @@ class Vendors extends Section implements Initializable
         $this->addToNavigation()->setIcon('fa fa-wrench');
     }
 
-
+    /**
+     * Переопределение метода для запрета удаления записи
+     *
+     * @param \Illuminate\Database\Eloquent\Model $model
+     *
+     * @return bool
+     */
+    public function isDeletable(\Illuminate\Database\Eloquent\Model $model)
+    {
+        return true;
+    }
     /**
      * @return DisplayInterface
      */
@@ -70,8 +80,8 @@ class Vendors extends Section implements Initializable
         return AdminForm::panel()->addBody([
             AdminFormElement::image('image', 'Логотип')->required(),
             AdminFormElement::text('title', 'Наименование')->required(),
-            AdminFormElement::textarea('introtext', 'Интро-текст')->required(),
-            AdminFormElement::textarea('text', 'Текст описания')->required(),
+            AdminFormElement::ckeditor('introtext', 'Интро-текст')->required(),
+            AdminFormElement::ckeditor('text', 'Текст описания')->required(),
 
             AdminFormElement::text('metatitle', 'metatitle'),
             AdminFormElement::text('metakeywords', 'metakeywords'),

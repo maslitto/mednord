@@ -7,9 +7,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1">
-    <title>Nordline</title>
-    <meta name='description' content="" />
-    <meta name="keywords" content="" />
+
+    <title>{{$page->metatitle}}</title>
+    <meta name='description' content="{{$page->metadescription}}" />
+    <meta name="keywords" content="{{$page->metakeywords}}" />
     <link rel="icon" type="image/png" href="/img/favicon.png" />
     <link rel="stylesheet" type="text/css" href="/css/style.css" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">

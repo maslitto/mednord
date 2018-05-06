@@ -36,8 +36,8 @@ class ProductRepository
             $products = $products->orderBy('updated_at','DESC');
         }
         $products->get();
-        if(isset($params['per_page'])){
-            $products = $products->paginate($params['per_page']);
+        if(isset($params['per-page'])){
+            $products = $products->paginate($params['per-page']);
         } else{
             $products = $products->paginate(12);
         }

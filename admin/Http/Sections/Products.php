@@ -59,7 +59,17 @@ class Products extends Section implements Initializable
 
         ])->paginate(20);
     }
-
+    /**
+     * Переопределение метода для запрета удаления записи
+     *
+     * @param \Illuminate\Database\Eloquent\Model $model
+     *
+     * @return bool
+     */
+    public function isDeletable(\Illuminate\Database\Eloquent\Model $model)
+    {
+        return true;
+    }
     /**
      * @param int $id
      *

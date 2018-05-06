@@ -47,6 +47,17 @@ class Pages extends Section implements Initializable
         return AdminDisplay::tree()->setOrderField('title')->setValue('title');
     }
     /**
+     * Переопределение метода для запрета удаления записи
+     *
+     * @param \Illuminate\Database\Eloquent\Model $model
+     *
+     * @return bool
+     */
+    public function isDeletable(\Illuminate\Database\Eloquent\Model $model)
+    {
+        return true;
+    }
+    /**
      * @param int $id
      *
      * @return FormInterface

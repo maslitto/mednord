@@ -11,10 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -25,7 +21,6 @@ Route::get('/', function () {
 | kernel and includes session state, CSRF protection, and more.
 |
 */
-
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
@@ -37,14 +32,19 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::get('/products/{slug}', 'CatalogController@view')->name('product');
     Route::get('/search', 'CatalogController@search')->name('search');
+
+
     Route::get('/kontakty', function () {
         return view('contacts');
     })->name('kontakty');
     Route::get('/o-kompanii', function () {
-        return view('about');
-    })->name('about');
-    Route::get('/proizvoditeli/', 'VendorController@index');
-    Route::get('/proizvoditeli/{slug?}', 'VendorController@view');
+        return view('about',['page' => \App\Model\Page::where('slug','o-kompanii')->firstOrFail()]);
+    })->name('o-kompanii');
+
+
+    Route::get('/proizvoditeli/', 'VendorController@index')->name('proizvoditeli');
+    Route::get('/proizvoditeli/{slug?}', 'VendorController@view')->name('vendor');
+
     Route::post('/question/save', 'QuestionController@save');
-    Route::get('/info/{slug}', 'InfoController@index');
+    Route::get('/info/{slug}', 'InfoController@index')->name('info');
 });
