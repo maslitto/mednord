@@ -27,7 +27,7 @@ Breadcrumbs::register('search', function($breadcrumbs)
 // Home > Search
 Breadcrumbs::register('info', function($breadcrumbs, $slug)
 {
-    $page = Page::where('slug', $slug)->firstOrFail();
+    $page = Page::where('slug',"LIKE",'%'.$slug.'%')->firstOrFail();
     $breadcrumbs->parent('home');
     $breadcrumbs->push($page->title, route('info', $page->slug));
 });
