@@ -25,14 +25,14 @@
 							<i class="icon-contacts address"></i>
 							<div class="text">
 								<div class="title">Наш адрес:</div>
-								<span>РФ 123456, г. Санкт-Петербург, ул.Рощинская 32 литер а , офис 402</span>
+								<span>Россия, г. Санкт-Петербург, ул.Рощинская 32 литер а , офис 402</span>
 							</div>
 						</div>
 						<div class="contacts-info__item">
 							<i class="icon-contacts tel"></i>
 							<div class="text">
 								<div class="title">Наш телефон</div>
-								<a href="+78126027847">+7 (812) 6027847</a>
+								{{config('app.phone')}}
 								<!--a href="+78129874365">+7 (812) 987-43-65</a-->
 							</div>
 						</div>

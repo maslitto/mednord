@@ -12,7 +12,7 @@ return [
     | services your application utilizes. Set this in your ".env" file.
     |
     */
-    'phone' => '+7 (812) 602-78-47',
+    'phone' => '+7 (812) 409-47-49',
     'email' => 'info@med-nord.ru',
 
     'env' => env('APP_ENV', 'production'),
