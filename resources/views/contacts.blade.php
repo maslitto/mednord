@@ -33,7 +33,6 @@
 							<div class="text">
 								<div class="title">Наш телефон</div>
 								{{config('app.phone')}}
-								<!--a href="+78129874365">+7 (812) 987-43-65</a-->
 							</div>
 						</div>
 						<div class="contacts-info__item">
