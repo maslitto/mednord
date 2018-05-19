@@ -48,7 +48,7 @@
             <div class="box-field">
                 <label class="box-field__label">Наименование оборудования:</label>
                 <div class="box-field__input">
-                    <input type="text" class="form-control" name="title" placeholder="Siemens Aloka ProSound F99 (Россия)">
+                    <input type="text" class="form-control" name="title" placeholder=" Aloka ProSound F99">
                 </div>
             </div>
             <div class="box-field">
@@ -118,7 +118,6 @@
             <input type="submit" value="Отправить" class="main-btn white">
             <input type="hidden" value="" name="robot">
         </form>
-        <!--div class="descr">Коммерческое предложение с максимальной скидкой будет направлено Вам по электронной почте.</div-->
     </div>
 </div>
 

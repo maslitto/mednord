@@ -29,7 +29,8 @@ class IndexController extends Controller
             'banners' => $banners,
             'news' => $news,
             'vendors' => $vendors,
-            'categories' => $categories
+            'categories' => $categories,
+            'page' => Page::find(1)
         ]);
     }
 }

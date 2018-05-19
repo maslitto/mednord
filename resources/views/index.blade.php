@@ -108,7 +108,9 @@
                         <div class="section-title">
                             <h2 class="hidden-xs">О компании</h2>
                         </div>
-                        <p>Наша компания уже более 6 лет занимается поставками медицинского оборудования и комплектующих. За это время мы накопили огромный опыт работы с клинетами и производителями.Мы с радостью решим Ваши задачи в кротчайшие сроки.</p>
+                        <div class="seotext">
+                            {!! $page->seotext !!}
+                        </div>
                         <div class="homeAbout-features">
                             <div class="homeAbout-features__item">
                                 <span class="number">42</span>

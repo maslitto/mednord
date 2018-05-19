@@ -47,4 +47,9 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::post('/question/save', 'QuestionController@save');
     Route::get('/info/{slug}', 'InfoController@index')->name('info');
+
+    Route::post('/admin/image-upload', [
+        'as'   => 'upload.image.admin',
+        'uses' => "ImageController@storeAdmin"
+    ]);
 });

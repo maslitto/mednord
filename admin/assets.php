@@ -23,3 +23,5 @@ PackageManager::add('jquery.add-input-area-master')
     ->js('jquery.add-input-area.js', asset('jquery.add-input-area-master/dist/jquery.add-input-area.js', ['admin-default']));
 Meta::addJs('customs',    asset('/js/addfield.js'),'admin-default');
 Meta::addJs('custom',    asset('/packages/sleepingowl/jquery.add-input-area-master/dist/jquery.add-input-area.js'),'admin-default');
+PackageManager::load('ckeditor')
+    ->js(null, '/packages/sleepingowl/ckeditor/ckeditor.js', ['jquery']); //path to ckeditor.js (in public)

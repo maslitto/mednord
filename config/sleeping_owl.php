@@ -120,6 +120,10 @@ return [
          */
         'ckeditor' => [
             'height' => 200,
+            'extraPlugins'         => 'uploadimage,image2',
+            'uploadUrl'            => '/admin/image-upload', //path to custom controller
+            'filebrowserUploadUrl' => '/admin/image-upload', //path to custom controller (for browser ckeditor)
+
         ],
 
         /*
