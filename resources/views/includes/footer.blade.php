@@ -9,7 +9,7 @@
                 <div class="text">
                     <p>Подробно об оборудовании, видах дополнительных услуг, наших ценах.<br> Все что Вас заинтересовало! </p>
                 </div>
-                <a href="#request-price" class="main-btn white js-popup">Задать вопрос</a>
+                <a href="#ask-question" class="main-btn white js-popup">Задать вопрос</a>
             </div>
         </div>
     </div>
@@ -62,7 +62,7 @@
                 </div>
                 <div class="flex-item-5">
                     <div class="footer-contacts">
-                        <a href="#+78126027847"class="footer-tel">{{config('app.phone')}}</a>
+                        <a href="tel:8{{str_replace(['(',')',' ', '+7','-'],'',config('app.phone'))}}"class="footer-tel">{{config('app.phone')}}</a>
                         <span><strong>Режим работы:</strong> с 9 до 18.00 пн-пт</span>
                         <span><strong>e-mail:</strong> <a href="mailto:{{config('app.email')}}">{{config('app.email')}}</a></span>
                     </div>

@@ -71,6 +71,7 @@ class Questions extends Section implements Initializable
             AdminColumn::text('company', 'Компания'),
             AdminColumn::text('email', 'E-mail'),
             AdminColumn::text('phone', 'Телефон'),
+            AdminColumn::text('message', 'Сообщение'),
         ])->paginate(20);
     }
 

@@ -10,7 +10,7 @@
 			</div>
 		</div>
 		
-		<div class="product">
+		<div class="product" itemscope itemtype="http://schema.org/Product">
 			<div class="wrapper">
 				<div class="product-container">
 					<div class="product-left">
@@ -19,14 +19,14 @@
 							<div class="product-sliderNav js-product-sliderNav">
 								@foreach($product->resized('264x223') as $image)
 									<div class="img-wrapper">
-										<img src="{{$image}}" alt="">
+										<img src="{{$image}}" alt="{{$product->title}}">
 									</div>
 								@endforeach
 							</div>
 							<div class="product-sliderMain js-product-sliderMain">
 								@foreach($product->resized('554x476') as $image)
 									<div class="img-wrapper">
-										<img src="{{$image}}" alt="">
+										<img src="{{$image}}" alt="{{$product->title}}" itemprop="image">
 									</div>
 								@endforeach
 							</div>
@@ -37,7 +37,7 @@
 							@if(isset($product->vendor_id))
 								<div class="brand">{{$product->vendor->title}}</div>
 							@endif
-							<h1 class="name">{{$product->title}}</h1>
+							<h1 class="name" itemprop="name">{{$product->title}}</h1>
 							<div class="price">Цена: <span></span></div>
 							<a href="#request-price" class="price-button js-popup"  onclick="$('.popup-form input[name=title]').val($('h1.name').text())">Запросить цену</a>
 							<div class="short-info">
@@ -71,7 +71,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="pageText">
+				<div class="pageText" itemprop="description">
 					<div class="tabs">
 						<span class="tab active" data-target="#tab1">Описание</span>
 						<span class="tab" data-target="#tab2">Характеристики</span>

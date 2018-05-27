@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+    <base href="/">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1">
@@ -15,8 +16,8 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
 
-    <base href="/">
-
+    <meta name="yandex-verification" content="bd8c706c5a869807" />
+    <meta name="google-site-verification" content="xXO8n_N5vUX-umQpkJIfIWssoDOpkArb8QKfcQosjb0" />
 </head>
 <body class="loaded">
 
@@ -73,6 +74,52 @@
                 <label class="box-field__label">Контактный телефон:</label>
                 <div class="box-field__input">
                     <input type="tel" class="form-control" name="phone" required placeholder="+74959876543">
+                </div>
+            </div>
+            <input type="submit" value="Отправить" class="main-btn white">
+            <input type="hidden" value="" name="robot">
+        </form>
+        <div class="descr">Коммерческое предложение с максимальной скидкой будет направлено Вам по электронной почте.</div>
+    </div>
+    <div class="popup" id="ask-question">
+        <div class="popup-title">Задать вопрос</div>
+        <div class="popup-sub-title">Все поля обязательны для заполнения</div>
+        <form class="popup-form" method="POST" action="question/save">
+            {!! csrf_field() !!}
+            <div class="box-field">
+                <label class="box-field__label">Наименование оборудования:</label>
+                <div class="box-field__input">
+                    <input type="text" class="form-control" name="title" placeholder=" Aloka ProSound F99">
+                </div>
+            </div>
+            <div class="box-field">
+                <label class="box-field__label">Представьтесь:</label>
+                <div class="box-field__input">
+                    <input type="text" class="form-control" name="name" required placeholder="Введите Ваше Имя">
+                </div>
+            </div>
+            <div class="box-field">
+                <label class="box-field__label">Организация:</label>
+                <div class="box-field__input">
+                    <input type="text" class="form-control" name="company" required placeholder="Введите название компании">
+                </div>
+            </div>
+            <div class="box-field">
+                <label class="box-field__label">Электронный адрес:</label>
+                <div class="box-field__input">
+                    <input type="email" class="form-control" name="email" required placeholder="Введите Ваш  e-mail">
+                </div>
+            </div>
+            <div class="box-field">
+                <label class="box-field__label">Контактный телефон:</label>
+                <div class="box-field__input">
+                    <input type="tel" class="form-control" name="phone" required placeholder="+74959876543">
+                </div>
+            </div>
+            <div class="box-field">
+                <label class="box-field__label">Ваш вопрос:</label>
+                <div class="box-field__input">
+                    <textarea class="form-control form-control--textarea" name="message" required></textarea>
                 </div>
             </div>
             <input type="submit" value="Отправить" class="main-btn white">

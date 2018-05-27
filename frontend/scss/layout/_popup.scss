@@ -44,6 +44,9 @@
 			@include placeholder{
 				color: #bfbfbf;
 			}
+			&--textarea{
+				height: 150px;
+			}
 		}
 	}
 	.descr{
