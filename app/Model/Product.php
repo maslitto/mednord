@@ -57,6 +57,15 @@ class Product extends Model
         return $baseImages;
     }
 
+    public function getMetatitleAttribute($value)
+    {
+        if(!empty($value)){
+            return $value;
+        } else {
+            return $this->title.' | Купить в «Нордлайн» c доставкой по России';
+        }
+
+    }
     public function resized($value)
     {
         $images = $this->getBaseImagesAttribute(NULL);
