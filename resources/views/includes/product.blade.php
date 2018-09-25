@@ -16,7 +16,7 @@
             @endif
         </div>
         <a href="{{$product->url}}" class="img-wrapper">
-            <img src="{{$product->resized('264x223')[0]}}" alt="{{$product->title}}">
+            <img src="/{{$product->resized('264x223')[0]}}" alt="{{$product->title}}">
         </a>
         <span class="button-container">
             <a href="#request-price" class="js-popup" data-product-title="{{$product->title}}" onclick="$('.popup-form input[name=title]').val($(this).data('product-title'))">Запросить цену</a>

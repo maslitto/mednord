@@ -19,14 +19,14 @@
 							<div class="product-sliderNav js-product-sliderNav">
 								@foreach($product->resized('264x223') as $image)
 									<div class="img-wrapper">
-										<img src="{{$image}}" alt="{{$product->title}}">
+										<img src="/{{$image}}" alt="{{$product->title}}">
 									</div>
 								@endforeach
 							</div>
 							<div class="product-sliderMain js-product-sliderMain">
 								@foreach($product->resized('554x476') as $image)
 									<div class="img-wrapper">
-										<img src="{{$image}}" alt="{{$product->title}}" itemprop="image">
+										<img src="/{{$image}}" alt="{{$product->title}}" itemprop="image">
 									</div>
 								@endforeach
 							</div>

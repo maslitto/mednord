@@ -18,7 +18,7 @@
 			<div class="wrapper">
 				<div class="container">
 					<div class="icon-wrapper">
-						<img src="{{$vendor->image}}" alt="{{$vendor->title}}">
+						<img src="/{{$vendor->image}}" alt="{{$vendor->title}}">
 					</div>
 					<div class="text">
 						<h3>{{$vendor->title}}</h3>
@@ -42,7 +42,7 @@
 			<div class="wrapper">
 				<div class="brands-container">
 					@foreach($vendors as $vendor)
-						<a href="{{$vendor->url}}" class="brands-item"><img src="{{$vendor->image}}" alt="{{$vendor->title}}"></a>
+						<a href="{{$vendor->url}}" class="brands-item"><img src="/{{$vendor->image}}" alt="{{$vendor->title}}"></a>
 					@endforeach
 				</div>
 			</div>

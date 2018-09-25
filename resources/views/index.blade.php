@@ -59,37 +59,37 @@
                 <div class="flex-container">
                     <div class="flex-item-2">
                         <a href="{{$categories['cat1']->url}}" class="homeCatalog-item">
-                            <img src="img/cat1.jpg" alt="Анастезиология  и реанимация">
+                            <img src="/img/cat1.jpg" alt="Анастезиология  и реанимация">
                             <span class="name">Анастезиология и реанимация</span>
                         </a>
                     </div>
                     <div class="flex-item-4">
                         <a href="{{$categories['cat2']->url}}" class="homeCatalog-item">
-                            <img src="img/cat2.jpg" alt="Эндоскопия">
+                            <img src="/img/cat2.jpg" alt="Эндоскопия">
                             <span class="name">Эндоскопия</span>
                         </a>
                     </div>
                     <div class="flex-item-4">
                         <a href="{{$categories['cat3']->url}}" class="homeCatalog-item">
-                            <img src="img/cat3.jpg" alt="Рентгенология">
+                            <img src="/img/cat3.jpg" alt="Рентгенология">
                             <span class="name">Рентгенология</span>
                         </a>
                     </div>
                     <div class="flex-item-4">
                         <a href="{{$categories['cat4']->url}}" class="homeCatalog-item">
-                            <img src="img/cat4.jpg" alt="Хирургия">
+                            <img src="/img/cat4.jpg" alt="Хирургия">
                             <span class="name">Хирургия</span>
                         </a>
                     </div>
                     <div class="flex-item-2">
                         <a href="{{$categories['cat5']->url}}" class="homeCatalog-item">
-                            <img src="img/cat5.jpg" alt="Функциональная диагностика">
+                            <img src="/img/cat5.jpg" alt="Функциональная диагностика">
                             <span class="name">Функциональная диагностика</span>
                         </a>
                     </div>
                     <div class="flex-item-4">
                         <a href="{{$categories['cat6']->url}}" class="homeCatalog-item">
-                            <img src="img/cat6.jpg" alt="УЗИ(ультразвуковая диагностика)">
+                            <img src="/img/cat6.jpg" alt="УЗИ(ультразвуковая диагностика)">
                             <span class="name">УЗИ(ультразвуковая диагностика)</span>
                         </a>
                     </div>
@@ -102,7 +102,7 @@
                 <h2 class="visible-xs">О компании</h2>
                 <div class="homeAbout-container">
                     <div class="img-wrapper">
-                        <img src="img/img-about.png" alt="">
+                        <img src="/img/img-about.png" alt="">
                     </div>
                     <div class="text">
                         <div class="section-title">
@@ -144,7 +144,7 @@
                     @foreach($news as $post)
                         <a href="{{ $post->url }}" class="lastNews-item">
                             <div class="img-wrapper">
-                                <img src="{{$post->image}}" alt="{{$post->title}}">
+                                <img src="/{{$post->image}}" alt="{{$post->title}}">
                             </div>
                             <div class="text">
                                 <span class="date">{{$post->created_at->format('d.m.Y')}}</span>
@@ -160,7 +160,7 @@
             <div class="wrapper">
                 <div class="brands-slider js-brands-slider dots-out">
                     @foreach($vendors as $vendor)
-                        <a href="{{$vendor->url}}" class="brands-item"><img src="{{$vendor->image}}" alt=""></a>
+                        <a href="{{$vendor->url}}" class="brands-item"><img src="/{{$vendor->image}}" alt=""></a>
                     @endforeach
                 </div>
             </div>

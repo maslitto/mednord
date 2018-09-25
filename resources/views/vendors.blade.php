@@ -24,7 +24,7 @@
 					<div class="big-list__item">
 					<div class="wrapper">
 						<div class="container">
-							<div class="img-wrapper"><img src="{{$vendor->image}}" alt=""></div>
+							<div class="img-wrapper"><img src="/{{$vendor->image}}" alt=""></div>
 							<div class="text">
 								<h3 class="name">{{$vendor->title}}</h3>
 								<p>{{$vendor->introtext}}</p>
