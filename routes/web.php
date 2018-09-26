@@ -1,5 +1,6 @@
 <?php
 
+use App\Model\Page;
 /*
 |--------------------------------------------------------------------------
 | Routes File
@@ -42,12 +43,18 @@ Route::group(['middleware' => 'web'], function () {
         return view('about',['page' => \App\Model\Page::where('slug','o-kompanii')->firstOrFail()]);
     })->name('o-kompanii');
 
+    Route::get('/dostavka', function () {
+        $page = Page::where('slug',"LIKE",'dostavka')->firstOrFail();
+        return view('content',[
+            'page' => $page,
+        ]);
+    })->name('dostavka');
 
     Route::get('/proizvoditeli/', 'VendorController@index')->name('proizvoditeli');
     Route::get('/proizvoditeli/{slug?}', 'VendorController@view')->name('vendor');
 
     Route::post('/question/save', 'QuestionController@save');
-    Route::get('/info/{slug}', 'InfoController@index')->name('info');
+    //Route::get('/info/{slug}', 'InfoController@index')->name('info');
 
     Route::post('/admin/image-upload', [
         'as'   => 'upload.image.admin',
