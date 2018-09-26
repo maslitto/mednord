@@ -25,6 +25,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
     Route::get('/', 'IndexController@index')->name('home');
+    Route::get('/sitemap.xml', 'SitemapController@sitemap')->name('sitemap');
 
     Route::get('catalog/{subcategory?}', 'CatalogController@index')
         ->name('catalog')

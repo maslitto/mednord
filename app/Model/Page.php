@@ -25,6 +25,9 @@ class Page extends Node
         foreach($this->getAncestorsAndSelf() as $descendant) {
             $url .= $descendant->slug . '/';
         }
+        if($this->id == 1){
+            $url = '';
+        }
         //dd($url);
         return $url;
     }
