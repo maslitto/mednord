@@ -134,7 +134,7 @@
                 </div>
             </div>
         </section>
-
+        {{--
         <section class="lastNews">
             <div class="wrapper">
                 <div class="section title">
@@ -155,7 +155,7 @@
                 </div>
             </div>
         </section>
-
+        --}}
         <section class="brands grey">
             <div class="wrapper">
                 <div class="brands-slider js-brands-slider dots-out">

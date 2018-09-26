@@ -18,7 +18,7 @@
             <div class="flex-container">
                 <div class="flex-item-4">
                     <div class="footer-left">
-                        <div class="footer-socials">
+                        <!--div class="footer-socials">
                             <div class="footer-socials__title">
                                 Мы в соц.медия:
                             </div>
@@ -39,7 +39,7 @@
                                     <a href="#"><i class="icon-socials inst"></i></a>
                                 </li>
                             </ul>
-                        </div>
+                        </div-->
                         <div class="footer-rights">
                             &copy; 2013-2018  ООО «Нордлайн»<br>
                             Все права защищены.

@@ -36,4 +36,10 @@ class Page extends Node
             return '/img/empty.png';
         }
     }
+    //Scopes
+    public function scopeActive($query)
+    {
+        return $query->where('active',1);
+    }
+
 }

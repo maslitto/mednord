@@ -25,9 +25,9 @@ class ProductRepository
             foreach($leaves as $leaf){
                 $ids[] = $leaf->id;
             }
-            $products = Product::whereIn('category_id', $ids);
+            $products = Product::active()->whereIn('category_id', $ids);
         } else{
-            $products = Product::where('category_id',$page->id);
+            $products = Product::active()->where('category_id',$page->id);
         }
 
         if(!empty($params['sortby'])){

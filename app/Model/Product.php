@@ -101,6 +101,10 @@ class Product extends Model
 
         }
     }
-
+    //Scopes
+    public function scopeActive($query)
+    {
+        return $query->where('active',1);
+    }
 
 }

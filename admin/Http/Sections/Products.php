@@ -103,6 +103,7 @@ class Products extends Section implements Initializable
             //$model->params = $model->params;
         });
         return AdminForm::panel()->addBody([
+            AdminFormElement::checkbox('active','Показать на сайте'),
             AdminFormElement::images('images', 'Картинки'),
             AdminFormElement::text('title', 'Заголовок')->required(),
             AdminFormElement::text('article', 'Артикул'),

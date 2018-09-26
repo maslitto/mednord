@@ -36,7 +36,7 @@ class CatalogController extends Controller
             $page = Page::where('slug','catalog')->first();
         }
         $categories = Page::where('parent_id' , 2)->get();
-        $children = Page::where('parent_id' , $page->id)->get();
+        $children = Page::active()->where('parent_id' , $page->id)->get();
 
         if($page->isLeaf()){
             $params = $request->all();

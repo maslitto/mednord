@@ -65,6 +65,7 @@ class Pages extends Section implements Initializable
     public function onEdit($id)
     {
         return AdminForm::form()->setElements([
+            AdminFormElement::checkbox('active','Показать на сайте'),
             AdminFormElement::image('image','Картинка'),
             AdminFormElement::text('title', 'Заголовок')->required(),
             AdminFormElement::text('metatitle', 'metatitle'),
