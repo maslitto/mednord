@@ -76,7 +76,7 @@ class Product extends Model
             return $images;
         }
 
-        else return ['/img/empty.png'];
+        else return ['img/empty.png'];
     }
 
     public function resizeImages()

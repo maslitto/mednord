@@ -36,7 +36,7 @@ class Page extends Node
         if(isset($value)){
             return $value;
         } else {
-            return '/img/empty.png';
+            return 'img/empty.png';
         }
     }
     //Scopes
