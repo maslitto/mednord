@@ -37,8 +37,8 @@ Route::group(['middleware' => 'web'], function () {
 
 
     Route::get('/kontakty', function () {
-        return view('contacts');
-    })->name('kontakty',['page' => \App\Model\Page::where('slug','kontakty')->firstOrFail()]);
+        return view('contacts',['page' => \App\Model\Page::where('slug','kontakty')->firstOrFail()]);
+    })->name('kontakty');
     Route::get('/o-kompanii', function () {
         return view('about',['page' => \App\Model\Page::where('slug','o-kompanii')->firstOrFail()]);
     })->name('o-kompanii');
