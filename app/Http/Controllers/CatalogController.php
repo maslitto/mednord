@@ -32,9 +32,16 @@ class CatalogController extends Controller
     {
         if($subcategory){
             $subcategory = explode('/',$subcategory);
+            $parent = NULL;
 
-            foreach($subcategory as $slugItem){
-                if(!Page::where('slug',$slugItem)->first()){
+            foreach($subcategory as $k => $slugItem){
+                if($parent){
+                    $parent = Page::where('slug', $slugItem)->where('parent_id',$parent->id)->first();
+                } else{
+                    $parent = Page::where('slug', $slugItem)->first();
+                }
+
+                if(!$parent){
                     abort(404);
                 } else continue;
             }
