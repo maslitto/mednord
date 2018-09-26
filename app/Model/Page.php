@@ -39,6 +39,32 @@ class Page extends Node
             return 'img/empty.png';
         }
     }
+    public function getMetatitleAttribute($value)
+    {
+        if(!empty($value)){
+            return $value;
+        } else {
+            return $this->title.' — купить в «Нордлайн» по привлекательной цене. Доставка по России.';
+        }
+
+    }
+    public function getMetadescriptionAttribute($value)
+    {
+        if(!empty($value)){
+            return $value;
+        } else {
+            return "На сайте компании «Нордлайн» вы можете приобрести  из категории «".$this->title."» по привлекательной цене. Характеристики, сертификаты. Доставка по всей России.";
+        }
+
+    }
+    public function getMetakeywordsAttribute($value)
+    {
+        if(!empty($value)){
+            return $value;
+        } else {
+            return "$this->title инструкция, цена, нордлайн, доставка по россии, санкт-петербург, спб, каталог, интернет-магазин";
+        }
+    }
     //Scopes
     public function scopeActive($query)
     {
