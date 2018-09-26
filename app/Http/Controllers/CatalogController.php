@@ -31,7 +31,14 @@ class CatalogController extends Controller
     public function index(Request $request, $subcategory = null)
     {
         $subcategory = explode('/',$subcategory);
-        $page = Page::where('slug',end($subcategory))->first();
+        //dump($subcategory);
+        foreach($subcategory as $slugItem){
+            if(!Page::where('slug',$slugItem)->first()){
+                abort(404);
+            } else continue;
+        }
+        $slug = end($subcategory);
+        $page = Page::where('slug',$slug)->first();
         if(!$page){
             $page = Page::where('slug','catalog')->first();
         }
