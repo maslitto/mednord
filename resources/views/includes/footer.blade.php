@@ -51,7 +51,7 @@
                         <span class="footer-title">КАРТА САЙТА</span>
                         <ul class="footer-nav-list">
                             @foreach(App\Model\Page::where('parent_id',null)->orderBy('lft','ASC')->get() as $menu)
-                                <li><a href="/catalog/{{$menu->slug}}" class="
+                                <li><a href="{{$menu->slug}}" class="
                                             @if(isset($page))
                                     @if ($page->slug == $menu->slug)
                                             active
