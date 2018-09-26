@@ -50,7 +50,7 @@ Route::group(['middleware' => 'web'], function () {
         ]);
     })->name('dostavka');
 
-    Route::get('/proizvoditeli/', 'VendorController@index')->name('proizvoditeli');
+    Route::get('/proizvoditeli', 'VendorController@index')->name('proizvoditeli');
     Route::get('/proizvoditeli/{slug?}', 'VendorController@view')->name('vendor');
 
     Route::post('/question/save', 'QuestionController@save');
