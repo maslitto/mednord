@@ -66,6 +66,22 @@ class Product extends Model
         }
 
     }
+    public function getMetadescriptionAttribute($value)
+    {
+        if(!empty($value)){
+            return $value;
+        } else {
+            $categoryTitle = $this->category->title;
+            return "На сайте компании «Нордлайн» вы можете приобрести  из категории «".$categoryTitle."» по привлекательной цене. Характеристики, сертификаты. Доставка по всей России.";
+        }
+
+    }
+    public function getMetakeywordsAttribute($value)
+    {
+        $categoryTitle = $this->category->title;
+        return "$this->title, $categoryTitle, инструкция, цена, нордлайн, доставка по россии, санкт-петербург, спб, каталог, интернет-магазин";
+    }
+
     public function resized($value)
     {
         $images = $this->getBaseImagesAttribute(NULL);
