@@ -50,8 +50,6 @@ Breadcrumbs::register('post', function($breadcrumbs, $post)
 {
     //dd($blog);
     $breadcrumbs->parent('blog');
-    //$breadcrumbs->push('Избранное', route('wishlist'));
-    //dd($post);
     $breadcrumbs->push($post->title, route('post', $post->slug));
 });
 

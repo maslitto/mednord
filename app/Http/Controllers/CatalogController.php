@@ -52,7 +52,7 @@ class CatalogController extends Controller
         }
         $categories = Page::where('parent_id' , 2)->get();
         $children = Page::active()->where('parent_id' , $page->id)->get();
-
+        $ancestors = $page->getAncestors();
         if($page->isLeaf()){
             $params = $request->all();
             if($page->slug == 'ves-spisok'){
@@ -68,6 +68,7 @@ class CatalogController extends Controller
                 'categories' => $categories,
                 'vendors' => $vendors,
                 'page' => $page,
+                'ancestors' => $ancestors
             ]);
 
         }else{
@@ -75,7 +76,8 @@ class CatalogController extends Controller
             return view('category',[
                 'categories' => $categories,
                 'page' => $page,
-                'children' => $children
+                'children' => $children,
+                'ancestors' => $ancestors
             ]);
         }
 
@@ -88,9 +90,11 @@ class CatalogController extends Controller
     public function view($slug)
     {
         $product = Product::where('slug' , $slug)->firstOrFail();
+        $ancestors = $product->category->getAncestors();
         return view('product',[
             'product' => $product,
             'page' => $product,
+            'ancestors' => $ancestors
         ]);
     }
 

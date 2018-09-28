@@ -4,7 +4,13 @@
     <main class="content">
         <div class="pageHead">
             <div class="wrapper">
-                {!! Breadcrumbs::renderIfExists() !!}
+                <ul class="breadcrumbs">
+                    <li><a href="/">Главная</a></li>
+                    @foreach($ancestors as $ancestor)
+                        <li><a href="/">{{$ancestor->title}}</a></li>
+                    @endforeach
+                    <li class="active">{{$page->title}}</li>
+                </ul>
                 <div class="pageTitle">
                     <h1>{{$page->title}}</h1>
                 </div>
