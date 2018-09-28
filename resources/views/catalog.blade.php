@@ -7,7 +7,7 @@
                 <ul class="breadcrumbs">
                     <li><a href="/">Главная</a></li>
                     @foreach($ancestors as $ancestor)
-                        <li><a href="/">{{$ancestor->title}}</a></li>
+                        <li><a href="/{{$ancestor->url}}">{{$ancestor->title}}</a></li>
                     @endforeach
                     <li class="active">{{$page->title}}</li>
                 </ul>

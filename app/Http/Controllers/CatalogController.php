@@ -90,7 +90,7 @@ class CatalogController extends Controller
     public function view($slug)
     {
         $product = Product::where('slug' , $slug)->firstOrFail();
-        $ancestors = $product->category->getAncestors();
+        $ancestors = $product->category->getAncestorsAndSelf();
         return view('product',[
             'product' => $product,
             'page' => $product,
