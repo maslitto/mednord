@@ -54,7 +54,6 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/proizvoditeli/{slug?}', 'VendorController@view')->name('vendor');
 
     Route::post('/question/save', 'QuestionController@save');
-    //Route::get('/info/{slug}', 'InfoController@index')->name('info');
 
     Route::post('/admin/image-upload', [
         'as'   => 'upload.image.admin',

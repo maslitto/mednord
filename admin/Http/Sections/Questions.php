@@ -66,6 +66,7 @@ class Questions extends Section implements Initializable
     {
 
         return AdminDisplay::table()->setColumns([
+            AdminColumn::datetime('created_at', 'Создан'),
             AdminColumn::text('title', 'Наименование товара'),
             AdminColumn::text('name', 'Имя'),
             AdminColumn::text('company', 'Компания'),
