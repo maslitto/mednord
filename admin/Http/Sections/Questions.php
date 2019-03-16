@@ -67,11 +67,11 @@ class Questions extends Section implements Initializable
 
         return AdminDisplay::table()->setColumns([
             AdminColumn::datetime('created_at', 'Создан'),
+            AdminColumn::text('phone', 'Телефон'),
             AdminColumn::text('title', 'Наименование товара'),
             AdminColumn::text('name', 'Имя'),
             AdminColumn::text('company', 'Компания'),
             AdminColumn::text('email', 'E-mail'),
-            AdminColumn::text('phone', 'Телефон'),
             AdminColumn::text('message', 'Сообщение'),
         ])->paginate(20);
     }
